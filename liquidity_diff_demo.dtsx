@@ -1,0 +1,2579 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/18/2018 10:41:20 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="KidsNextDoor"
+  DTS:CreatorName="KidsNextDoor\bumbleprime"
+  DTS:Description="SSIS Package Description"
+  DTS:DTSID="{65D0BF4D-77B8-42EA-BEA9-0DC094B86B86}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.0800.90"
+  DTS:LocaleID="1033"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="liquidity_diff_demo"
+  DTS:VersionGUID="{BF27E363-EC52-4C41-BDF9-8A7A39EA79B4}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{36EA8170-4401-429B-A036-812C5C50AFFF}"
+      DTS:ObjectName="DestinationConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=opserver.database.windows.net;User ID=openport@opserver;Initial Catalog=OpDb;Provider=SQLNCLI11;Auto Translate=false;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA3NnAxWI950K/K5SaRLPKYwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABgkqLyR2raWfrukJSg1C4QTSE2jOWQ4Ror5irn9QwUKwAAAAAOgAAAAAIAACAAAABknQrJEkQeC9CP+yZr56Yzm4jMWmpyCR8fIb7yIdV7miAAAAAJ6h/Fuemxcm/Cfnke/DyCIlQCsU7WB/dhw5bj1xog+UAAAAB5PSo4OyjoSkYRGNFma/G7FSe6aL0QbVQIhsqkQ2lxEa3Gfc3Yqd1FvevZqWzkkAKtvKqKllkdtQUQjdAfD1pQ</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{827EB474-E586-43FA-939B-FCB73556202E}"
+      DTS:ObjectName="SourceConnectionFlatFile">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\Users\bumbleprime\Desktop\MYSQL_Data_Feed\liquidity_diff_demo.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id"
+              DTS:DTSID="{7455A897-FDA4-4BAD-BAEF-3C9C54C54699}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="report_invoice_nbr"
+              DTS:DTSID="{DC2CDD1D-0A0B-48A6-8E53-44ABB1BC411E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="status_cd"
+              DTS:DTSID="{C6EB6DBC-F20A-40E3-A154-1B3005E2900F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="invoice_amt"
+              DTS:DTSID="{853DBACC-681F-4AB4-8682-6D830D76A0D6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="tax_amt"
+              DTS:DTSID="{8518314A-5668-4521-92FC-04EB78A31DDD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="availment_amt"
+              DTS:DTSID="{C5F9C5BF-327D-467A-AA3A-1AACC3C4D201}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="availment_dt"
+              DTS:DTSID="{CEF56470-AA25-45C4-B002-5C28704BF8CC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="charge_amount"
+              DTS:DTSID="{5AFE891C-37A3-413E-A774-68E84AC72E36}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="carrier"
+              DTS:DTSID="{01F91A69-FD46-4325-ABCD-5FA16997362F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="currency_cd"
+              DTS:DTSID="{6A90E863-0FED-4EBD-A4B3-C1DF6295B938}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="create_dt"
+              DTS:DTSID="{A9748E6C-C2DD-406B-934B-CF49615A063B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="parent_partner_cd"
+              DTS:DTSID="{06A1F08E-9020-4FCD-B4EA-9886978E6F15}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="invoice_number"
+              DTS:DTSID="{6FC2D764-8CB7-4377-990C-7729DC1C8BA4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Charge_Type_Cd"
+              DTS:DTSID="{7EFD0321-438E-4F8A-B329-8482F8708703}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Service_Type_Cd"
+              DTS:DTSID="{DA1B6A03-61B4-49E9-870C-6DB5432E0199}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="service_dt"
+              DTS:DTSID="{FD53F80F-C391-4BEA-8101-49C9100146D2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="order_number"
+              DTS:DTSID="{00AE4E56-BE44-4127-A32F-0A8BF72F4A15}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="shipper"
+              DTS:DTSID="{E926A3E8-4947-4E44-8B5B-C5B69DCC18E3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="promissory_note_nbr"
+              DTS:DTSID="{DEC2A421-4187-418E-9096-68A5E1AFA973}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="promissory_note_dt"
+              DTS:DTSID="{BE64BDF4-10EA-424A-8B29-65454F5AAA8F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="maturity_date"
+              DTS:DTSID="{7624E38A-E7EE-4C46-B86D-F4FAC9C19D12}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="maker_name"
+              DTS:DTSID="{7F010C1B-F0A2-4719-8D99-52C7A3227D56}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="promissory_interest"
+              DTS:DTSID="{227EF0B7-4D9A-4BF9-8836-2984BA42A9DC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="terms"
+              DTS:DTSID="{BBD6CD41-0E8D-4F0B-9758-2EC66A72AC87}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="principal_amt"
+              DTS:DTSID="{60870896-9446-44EA-B91A-A389823A0C68}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="outstanding_balance_amt"
+              DTS:DTSID="{763E4BAF-D1B5-496A-827F-74AC9A36208F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="repayment_amt"
+              DTS:DTSID="{47F945A5-5DA1-4B32-8415-6725B7301632}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="repayment_dt"
+              DTS:DTSID="{8131CF76-A2BF-4F4E-AA1E-0C42D300E09C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nominated_acct_nbr"
+              DTS:DTSID="{F7E0E599-12E7-4993-88FA-8E272A7A0B17}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="txn_reference_nbr"
+              DTS:DTSID="{C9ED6644-65A0-4CF5-8A3B-B11A39DFC1A0}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task 1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DTSID="{77C98CF6-3913-4B5F-9555-72102F19D6B9}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task 1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task 1\Data Conversion 0 - 0"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion 0 - 0"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[id]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="id"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[report_invoice_nbr]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="report_invoice_nbr"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[report_invoice_nbr]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[status_cd]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="status_cd"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[status_cd]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[invoice_amt]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="invoice_amt"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[invoice_amt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[tax_amt]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="tax_amt"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[tax_amt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[availment_amt]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="availment_amt"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[availment_amt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[availment_dt]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="availment_dt"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[availment_dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[charge_amount]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="charge_amount"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[charge_amount]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[carrier]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="carrier"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[carrier]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[currency_cd]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="currency_cd"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[currency_cd]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[create_dt]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="create_dt"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[create_dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[parent_partner_cd]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="parent_partner_cd"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[parent_partner_cd]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[invoice_number]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="invoice_number"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[invoice_number]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Charge_Type_Cd]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Charge_Type_Cd"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[Charge_Type_Cd]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Service_Type_Cd]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Service_Type_Cd"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[Service_Type_Cd]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[service_dt]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="service_dt"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[service_dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[order_number]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="order_number"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[order_number]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[shipper]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="shipper"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[shipper]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[promissory_note_nbr]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="promissory_note_nbr"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[promissory_note_nbr]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[promissory_note_dt]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="promissory_note_dt"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[promissory_note_dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[maturity_date]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="maturity_date"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[maturity_date]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[maker_name]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="maker_name"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[maker_name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[promissory_interest]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="promissory_interest"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[promissory_interest]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[terms]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="terms"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[terms]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[principal_amt]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="principal_amt"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[principal_amt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[outstanding_balance_amt]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="outstanding_balance_amt"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[outstanding_balance_amt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[repayment_amt]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="repayment_amt"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[repayment_amt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[repayment_dt]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="repayment_dt"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[repayment_dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[nominated_acct_nbr]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="nominated_acct_nbr"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[nominated_acct_nbr]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[txn_reference_nbr]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="txn_reference_nbr"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[txn_reference_nbr]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[id]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[report_invoice_nbr]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[report_invoice_nbr]"
+                      name="report_invoice_nbr"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[report_invoice_nbr]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[status_cd]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[status_cd]"
+                      name="status_cd"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[status_cd]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[invoice_amt]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[invoice_amt]"
+                      name="invoice_amt"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[invoice_amt]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[tax_amt]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[tax_amt]"
+                      name="tax_amt"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[tax_amt]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[availment_amt]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[availment_amt]"
+                      name="availment_amt"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[availment_amt]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[availment_dt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[availment_dt]"
+                      name="availment_dt"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[availment_dt]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[charge_amount]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[charge_amount]"
+                      name="charge_amount"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[charge_amount]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[carrier]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[carrier]"
+                      name="carrier"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[carrier]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[currency_cd]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[currency_cd]"
+                      name="currency_cd"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[currency_cd]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[create_dt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[create_dt]"
+                      name="create_dt"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[create_dt]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[parent_partner_cd]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[parent_partner_cd]"
+                      name="parent_partner_cd"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[parent_partner_cd]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[invoice_number]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[invoice_number]"
+                      name="invoice_number"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[invoice_number]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Charge_Type_Cd]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Charge_Type_Cd]"
+                      name="Charge_Type_Cd"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[Charge_Type_Cd]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Service_Type_Cd]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Service_Type_Cd]"
+                      name="Service_Type_Cd"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[Service_Type_Cd]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[service_dt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[service_dt]"
+                      name="service_dt"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[service_dt]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[order_number]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[order_number]"
+                      name="order_number"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[order_number]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[shipper]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[shipper]"
+                      name="shipper"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[shipper]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[promissory_note_nbr]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[promissory_note_nbr]"
+                      name="promissory_note_nbr"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[promissory_note_nbr]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[promissory_note_dt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[promissory_note_dt]"
+                      name="promissory_note_dt"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[promissory_note_dt]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[maturity_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[maturity_date]"
+                      name="maturity_date"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[maturity_date]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[maker_name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[maker_name]"
+                      name="maker_name"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[maker_name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[promissory_interest]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[promissory_interest]"
+                      name="promissory_interest"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[promissory_interest]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[terms]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[terms]"
+                      name="terms"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[terms]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[principal_amt]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[principal_amt]"
+                      name="principal_amt"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[principal_amt]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[outstanding_balance_amt]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[outstanding_balance_amt]"
+                      name="outstanding_balance_amt"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[outstanding_balance_amt]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[repayment_amt]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[repayment_amt]"
+                      name="repayment_amt"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[repayment_amt]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[repayment_dt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[repayment_dt]"
+                      name="repayment_dt"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[repayment_dt]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[nominated_acct_nbr]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[nominated_acct_nbr]"
+                      name="nominated_acct_nbr"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[nominated_acct_nbr]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[txn_reference_nbr]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[txn_reference_nbr]"
+                      name="txn_reference_nbr"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[txn_reference_nbr]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Destination - demo_liquidity"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Destination - demo_liquidity"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[demo_liquidity]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Destination - demo_liquidity.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].Columns[id]"
+                      cachedDataType="r8"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[id]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].Columns[report_invoice_nbr]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="report_invoice_nbr"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[report_invoice_nbr]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[report_invoice_nbr]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].Columns[status_cd]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="status_cd"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[status_cd]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[status_cd]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].Columns[invoice_amt]"
+                      cachedDataType="r8"
+                      cachedName="invoice_amt"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[invoice_amt]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[invoice_amt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].Columns[tax_amt]"
+                      cachedDataType="r8"
+                      cachedName="tax_amt"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[tax_amt]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[tax_amt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].Columns[availment_amt]"
+                      cachedDataType="r8"
+                      cachedName="availment_amt"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[availment_amt]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[availment_amt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].Columns[availment_dt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="availment_dt"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[availment_dt]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[availment_dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].Columns[charge_amount]"
+                      cachedDataType="r8"
+                      cachedName="charge_amount"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[charge_amount]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[charge_amount]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].Columns[carrier]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="carrier"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[carrier]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[carrier]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].Columns[currency_cd]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="currency_cd"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[currency_cd]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[currency_cd]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].Columns[create_dt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="create_dt"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[create_dt]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[create_dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].Columns[parent_partner_cd]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="parent_partner_cd"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[parent_partner_cd]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[parent_partner_cd]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].Columns[invoice_number]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="invoice_number"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[invoice_number]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[invoice_number]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].Columns[Charge_Type_Cd]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Charge_Type_Cd"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[Charge_Type_Cd]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Charge_Type_Cd]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].Columns[Service_Type_Cd]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Service_Type_Cd"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[Service_Type_Cd]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Service_Type_Cd]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].Columns[service_dt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="service_dt"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[service_dt]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[service_dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].Columns[order_number]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="order_number"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[order_number]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[order_number]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].Columns[shipper]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="shipper"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[shipper]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[shipper]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].Columns[promissory_note_nbr]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="promissory_note_nbr"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[promissory_note_nbr]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[promissory_note_nbr]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].Columns[promissory_note_dt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="promissory_note_dt"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[promissory_note_dt]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[promissory_note_dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].Columns[maturity_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="maturity_date"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[maturity_date]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[maturity_date]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].Columns[maker_name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="maker_name"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[maker_name]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[maker_name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].Columns[promissory_interest]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="promissory_interest"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[promissory_interest]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[promissory_interest]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].Columns[terms]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="terms"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[terms]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[terms]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].Columns[principal_amt]"
+                      cachedDataType="r8"
+                      cachedName="principal_amt"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[principal_amt]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[principal_amt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].Columns[outstanding_balance_amt]"
+                      cachedDataType="r8"
+                      cachedName="outstanding_balance_amt"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[outstanding_balance_amt]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[outstanding_balance_amt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].Columns[repayment_amt]"
+                      cachedDataType="r8"
+                      cachedName="repayment_amt"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[repayment_amt]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[repayment_amt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].Columns[repayment_dt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="repayment_dt"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[repayment_dt]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[repayment_dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].Columns[nominated_acct_nbr]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="nominated_acct_nbr"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[nominated_acct_nbr]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[nominated_acct_nbr]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].Columns[txn_reference_nbr]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="txn_reference_nbr"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[txn_reference_nbr]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[txn_reference_nbr]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[id]"
+                      dataType="r8"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[report_invoice_nbr]"
+                      dataType="wstr"
+                      length="255"
+                      name="report_invoice_nbr" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[status_cd]"
+                      dataType="wstr"
+                      length="255"
+                      name="status_cd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[invoice_amt]"
+                      dataType="r8"
+                      name="invoice_amt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[tax_amt]"
+                      dataType="r8"
+                      name="tax_amt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[availment_amt]"
+                      dataType="r8"
+                      name="availment_amt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[availment_dt]"
+                      dataType="dbTimeStamp"
+                      name="availment_dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[charge_amount]"
+                      dataType="r8"
+                      name="charge_amount" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[carrier]"
+                      dataType="wstr"
+                      length="255"
+                      name="carrier" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[currency_cd]"
+                      dataType="wstr"
+                      length="255"
+                      name="currency_cd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[create_dt]"
+                      dataType="dbTimeStamp"
+                      name="create_dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[parent_partner_cd]"
+                      dataType="wstr"
+                      length="255"
+                      name="parent_partner_cd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[invoice_number]"
+                      dataType="wstr"
+                      length="255"
+                      name="invoice_number" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[Charge_Type_Cd]"
+                      dataType="wstr"
+                      length="255"
+                      name="Charge_Type_Cd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[Service_Type_Cd]"
+                      dataType="wstr"
+                      length="255"
+                      name="Service_Type_Cd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[service_dt]"
+                      dataType="dbTimeStamp"
+                      name="service_dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[order_number]"
+                      dataType="wstr"
+                      length="255"
+                      name="order_number" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[shipper]"
+                      dataType="wstr"
+                      length="255"
+                      name="shipper" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[promissory_note_nbr]"
+                      dataType="wstr"
+                      length="255"
+                      name="promissory_note_nbr" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[promissory_note_dt]"
+                      dataType="dbTimeStamp"
+                      name="promissory_note_dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[maturity_date]"
+                      dataType="dbTimeStamp"
+                      name="maturity_date" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[maker_name]"
+                      dataType="wstr"
+                      length="255"
+                      name="maker_name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[promissory_interest]"
+                      dataType="wstr"
+                      length="255"
+                      name="promissory_interest" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[terms]"
+                      dataType="wstr"
+                      length="255"
+                      name="terms" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[principal_amt]"
+                      dataType="r8"
+                      name="principal_amt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[outstanding_balance_amt]"
+                      dataType="r8"
+                      name="outstanding_balance_amt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[repayment_amt]"
+                      dataType="r8"
+                      name="repayment_amt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[repayment_dt]"
+                      dataType="dbTimeStamp"
+                      name="repayment_dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[nominated_acct_nbr]"
+                      dataType="wstr"
+                      length="255"
+                      name="nominated_acct_nbr" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[txn_reference_nbr]"
+                      dataType="wstr"
+                      length="255"
+                      name="txn_reference_nbr" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input].ExternalColumns[RECORD_KEY]"
+                      dataType="i4"
+                      name="RECORD_KEY" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Destination - demo_liquidity.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - demo_liquidity.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - demo_liquidity.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - demo_liquidity.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Source - liquidity_diff_demo"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Source - liquidity_diff_demo"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[id]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[id]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[report_invoice_nbr]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[report_invoice_nbr]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[report_invoice_nbr]"
+                      name="report_invoice_nbr"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[status_cd]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[status_cd]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[status_cd]"
+                      name="status_cd"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[invoice_amt]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[invoice_amt]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[invoice_amt]"
+                      name="invoice_amt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[tax_amt]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[tax_amt]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[tax_amt]"
+                      name="tax_amt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[availment_amt]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[availment_amt]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[availment_amt]"
+                      name="availment_amt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[availment_dt]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[availment_dt]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[availment_dt]"
+                      name="availment_dt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[charge_amount]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[charge_amount]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[charge_amount]"
+                      name="charge_amount"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[carrier]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[carrier]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[carrier]"
+                      name="carrier"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[currency_cd]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[currency_cd]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[currency_cd]"
+                      name="currency_cd"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[create_dt]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[create_dt]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[create_dt]"
+                      name="create_dt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[parent_partner_cd]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[parent_partner_cd]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[parent_partner_cd]"
+                      name="parent_partner_cd"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[invoice_number]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[invoice_number]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[invoice_number]"
+                      name="invoice_number"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[Charge_Type_Cd]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[Charge_Type_Cd]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[Charge_Type_Cd]"
+                      name="Charge_Type_Cd"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[Service_Type_Cd]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[Service_Type_Cd]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[Service_Type_Cd]"
+                      name="Service_Type_Cd"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[service_dt]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[service_dt]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[service_dt]"
+                      name="service_dt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[order_number]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[order_number]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[order_number]"
+                      name="order_number"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[shipper]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[shipper]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[shipper]"
+                      name="shipper"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[promissory_note_nbr]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[promissory_note_nbr]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[promissory_note_nbr]"
+                      name="promissory_note_nbr"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[promissory_note_dt]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[promissory_note_dt]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[promissory_note_dt]"
+                      name="promissory_note_dt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[maturity_date]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[maturity_date]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[maturity_date]"
+                      name="maturity_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[maker_name]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[maker_name]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[maker_name]"
+                      name="maker_name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[promissory_interest]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[promissory_interest]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[promissory_interest]"
+                      name="promissory_interest"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[terms]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[terms]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[terms]"
+                      name="terms"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[principal_amt]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[principal_amt]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[principal_amt]"
+                      name="principal_amt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[outstanding_balance_amt]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[outstanding_balance_amt]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[outstanding_balance_amt]"
+                      name="outstanding_balance_amt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[repayment_amt]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[repayment_amt]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[repayment_amt]"
+                      name="repayment_amt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[repayment_dt]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[repayment_dt]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[repayment_dt]"
+                      name="repayment_dt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[nominated_acct_nbr]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[nominated_acct_nbr]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[nominated_acct_nbr]"
+                      name="nominated_acct_nbr"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[txn_reference_nbr]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[txn_reference_nbr]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].Columns[txn_reference_nbr]"
+                      name="txn_reference_nbr"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[id]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[report_invoice_nbr]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="report_invoice_nbr" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[status_cd]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="status_cd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[invoice_amt]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="invoice_amt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[tax_amt]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="tax_amt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[availment_amt]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="availment_amt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[availment_dt]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="availment_dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[charge_amount]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="charge_amount" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[carrier]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="carrier" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[currency_cd]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="currency_cd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[create_dt]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="create_dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[parent_partner_cd]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="parent_partner_cd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[invoice_number]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="invoice_number" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[Charge_Type_Cd]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Charge_Type_Cd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[Service_Type_Cd]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Service_Type_Cd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[service_dt]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="service_dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[order_number]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="order_number" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[shipper]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="shipper" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[promissory_note_nbr]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="promissory_note_nbr" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[promissory_note_dt]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="promissory_note_dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[maturity_date]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="maturity_date" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[maker_name]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="maker_name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[promissory_interest]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="promissory_interest" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[terms]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="terms" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[principal_amt]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="principal_amt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[outstanding_balance_amt]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="outstanding_balance_amt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[repayment_amt]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="repayment_amt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[repayment_dt]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="repayment_dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[nominated_acct_nbr]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="nominated_acct_nbr" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output].ExternalColumns[txn_reference_nbr]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="txn_reference_nbr" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task 1.Paths[Data Conversion Output]"
+              endId="Package\Data Flow Task 1\Destination - demo_liquidity.Inputs[Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Data Flow Task 1.Paths[Flat File Source Output]"
+              endId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task 1\Source - liquidity_diff_demo.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+</DTS:Executable>

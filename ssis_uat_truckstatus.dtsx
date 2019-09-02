@@ -1,0 +1,2451 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/23/2019 7:04:24 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="KidsNextDoor"
+  DTS:CreatorName="KidsNextDoor\bumbleprime"
+  DTS:Description="SSIS Package Description"
+  DTS:DTSID="{4C6F3729-BFD8-4869-8B7B-BFF0F7B48D4D}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.0800.90"
+  DTS:LocaleID="1033"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="ssis_uat_truckstatus"
+  DTS:VersionGUID="{97000F8E-1B30-47E8-A89C-D080148EAA7A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{19A6046E-4C54-4767-848C-F9B80DF514F8}"
+      DTS:ObjectName="DestinationConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=opserver.database.windows.net;User ID=openport;Initial Catalog=OpDb;Provider=SQLNCLI11;Auto Translate=false;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAANbee7U2CHUiy6/G8mSp2kQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACqJ7wpYWSvZHHw14ZzUJjKb0aX0AH3gm/gnb0mpVwjIQAAAAAOgAAAAAIAACAAAAA0flgTGv+ZNKXjCi3k46Rm7wGCWIZyhDioH9iBv6QlCiAAAAAPJl9Fk3nFId7TmREeFfpaRT9GT1xl3JGlG7Nhohm6H0AAAADOdj3/jMag1uYVvyarQk/DSuAzjRNHBLLau1S6qx2h5k4S0Jb5iUuZDlKbqS4MrgKyVyebamR96H3hQIBUDXGd</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{25213112-4082-46BC-AD41-F5154D27BBD7}"
+      DTS:ObjectName="SourceConnectionFlatFile">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\Users\bumbleprime\Desktop\MYSQL_Data_Feed\uat_truckstatus.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Create_Dt"
+              DTS:DTSID="{0B2BBF79-21F6-4FB2-BB0D-B34D1CBBCE7C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="update_dt"
+              DTS:DTSID="{D1ACD25A-7928-444A-BE7A-98BD9BC240C1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="pickup_dt"
+              DTS:DTSID="{030D2C35-F53C-46BD-936B-B27185359A43}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Equipment_Nbr"
+              DTS:DTSID="{5E3BB9C7-4FC4-4DCD-8DFB-803E98026F3C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="province"
+              DTS:DTSID="{B66739A2-06B3-44DE-9669-F25358BC5425}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="destination_warehouse"
+              DTS:DTSID="{6DEB66AC-B64C-42E3-9B88-7E4120AFA246}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="origin_warehouse"
+              DTS:DTSID="{FDEF6DAE-A0F1-4A23-B96C-20BE4685CE24}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="origin_province"
+              DTS:DTSID="{C805DFB6-73E6-4D2D-87F8-A41DE91F192D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DELIVERED_Dt"
+              DTS:DTSID="{FE3F7A3B-3A04-4561-BEDF-591AC652A75F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="stop_Doc_Processing"
+              DTS:DTSID="{84923209-70B5-4466-80E3-A96A732F6DD8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="start_doc_processing"
+              DTS:DTSID="{5817D226-A570-4812-880A-ED67D2408A2A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="gate_in"
+              DTS:DTSID="{A60BCD54-A2DF-4524-986E-2F6727089463}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Load_Dt"
+              DTS:DTSID="{18B8D2CB-4205-4C8B-820B-5860CA2E449D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="gate_out"
+              DTS:DTSID="{EAB2DDA0-ADAA-4ADB-9B75-74E06C04B09C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="consignee_accepted"
+              DTS:DTSID="{D1C56DA1-4164-445E-B5D7-3A8D6A4D552D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Truck_type"
+              DTS:DTSID="{20A54A53-A306-498F-944D-B538A658897B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="truck_status"
+              DTS:DTSID="{19B9207F-7815-48EB-B3C8-8AE17AC4A8BB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Asset_Number"
+              DTS:DTSID="{A276030E-6234-4D8F-A058-0D7AE90293C6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tag_Number"
+              DTS:DTSID="{944594DB-186F-4B63-9B46-2674C3762A55}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="carrier"
+              DTS:DTSID="{8B168FAE-9B5C-42B5-835E-46BA38C6262E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="shipper"
+              DTS:DTSID="{963841BE-7371-4380-9C4C-C73810BCF4C2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BAYASSIGN_dt"
+              DTS:DTSID="{64ED7ECF-2C65-478E-A2EB-860BD564FF94}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Unit_Count"
+              DTS:DTSID="{F5C93B98-BBF3-4332-9F4B-A7D31385A7EF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Delivered_Unit_Count"
+              DTS:DTSID="{8AC6AA30-DE5D-4B1A-A596-F086211086CA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pickup_Unit_Count"
+              DTS:DTSID="{EE71B58E-7E9E-444D-86D5-F804085E28DA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Comment_Txt"
+              DTS:DTSID="{829531ED-27AC-431E-901F-33B48CC0762C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="location_name"
+              DTS:DTSID="{ACC74BFE-E697-43E7-AF22-E3B04589653B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="unit_of_measure"
+              DTS:DTSID="{FE91CBA0-91DF-413B-B2CC-B6C01D18CB36}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task 1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DTSID="{A67448D2-15EA-4592-8975-313883139419}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task 1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task 1\Data Conversion 0 - 0"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion 0 - 0"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Create_Dt]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Create_Dt"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[Create_Dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[update_dt]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="update_dt"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[update_dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[pickup_dt]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="pickup_dt"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[pickup_dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Equipment_Nbr]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Equipment_Nbr"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[Equipment_Nbr]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[province]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="province"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[province]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[destination_warehouse]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="destination_warehouse"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[destination_warehouse]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[origin_warehouse]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="origin_warehouse"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[origin_warehouse]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[origin_province]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="origin_province"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[origin_province]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[DELIVERED_Dt]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DELIVERED_Dt"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[DELIVERED_Dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[stop_Doc_Processing]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="stop_Doc_Processing"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[stop_Doc_Processing]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[start_doc_processing]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="start_doc_processing"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[start_doc_processing]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[gate_in]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="gate_in"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[gate_in]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Load_Dt]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Load_Dt"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[Load_Dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[gate_out]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="gate_out"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[gate_out]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[consignee_accepted]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="consignee_accepted"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[consignee_accepted]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Truck_type]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Truck_type"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[Truck_type]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[truck_status]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="truck_status"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[truck_status]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Asset_Number]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Asset_Number"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[Asset_Number]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Tag_Number]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Tag_Number"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[Tag_Number]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[carrier]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="carrier"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[carrier]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[shipper]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="shipper"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[shipper]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[BAYASSIGN_dt]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BAYASSIGN_dt"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[BAYASSIGN_dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Unit_Count]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Unit_Count"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[Unit_Count]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Delivered_Unit_Count]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Delivered_Unit_Count"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[Delivered_Unit_Count]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Pickup_Unit_Count]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Pickup_Unit_Count"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[Pickup_Unit_Count]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Comment_Txt]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Comment_Txt"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[Comment_Txt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[location_name]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="location_name"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[location_name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[unit_of_measure]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="unit_of_measure"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[unit_of_measure]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Create_Dt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Create_Dt]"
+                      name="Create_Dt"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[Create_Dt]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[update_dt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[update_dt]"
+                      name="update_dt"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[update_dt]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[pickup_dt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[pickup_dt]"
+                      name="pickup_dt"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[pickup_dt]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Equipment_Nbr]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Equipment_Nbr]"
+                      name="Equipment_Nbr"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[Equipment_Nbr]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[province]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[province]"
+                      name="province"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[province]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[destination_warehouse]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[destination_warehouse]"
+                      name="destination_warehouse"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[destination_warehouse]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[origin_warehouse]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[origin_warehouse]"
+                      name="origin_warehouse"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[origin_warehouse]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[origin_province]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[origin_province]"
+                      name="origin_province"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[origin_province]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[DELIVERED_Dt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[DELIVERED_Dt]"
+                      name="DELIVERED_Dt"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[DELIVERED_Dt]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[stop_Doc_Processing]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[stop_Doc_Processing]"
+                      name="stop_Doc_Processing"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[stop_Doc_Processing]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[start_doc_processing]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[start_doc_processing]"
+                      name="start_doc_processing"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[start_doc_processing]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[gate_in]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[gate_in]"
+                      name="gate_in"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[gate_in]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Load_Dt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Load_Dt]"
+                      name="Load_Dt"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[Load_Dt]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[gate_out]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[gate_out]"
+                      name="gate_out"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[gate_out]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[consignee_accepted]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[consignee_accepted]"
+                      name="consignee_accepted"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[consignee_accepted]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Truck_type]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Truck_type]"
+                      name="Truck_type"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[Truck_type]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[truck_status]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[truck_status]"
+                      name="truck_status"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[truck_status]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Asset_Number]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Asset_Number]"
+                      name="Asset_Number"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[Asset_Number]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Tag_Number]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Tag_Number]"
+                      name="Tag_Number"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[Tag_Number]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[carrier]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[carrier]"
+                      name="carrier"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[carrier]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[shipper]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[shipper]"
+                      name="shipper"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[shipper]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[BAYASSIGN_dt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[BAYASSIGN_dt]"
+                      name="BAYASSIGN_dt"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[BAYASSIGN_dt]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Unit_Count]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Unit_Count]"
+                      name="Unit_Count"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[Unit_Count]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Delivered_Unit_Count]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Delivered_Unit_Count]"
+                      name="Delivered_Unit_Count"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[Delivered_Unit_Count]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Pickup_Unit_Count]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Pickup_Unit_Count]"
+                      name="Pickup_Unit_Count"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[Pickup_Unit_Count]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Comment_Txt]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Comment_Txt]"
+                      name="Comment_Txt"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[Comment_Txt]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[location_name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[location_name]"
+                      name="location_name"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[location_name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[unit_of_measure]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[unit_of_measure]"
+                      name="unit_of_measure"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[unit_of_measure]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Destination - uat_phsdiy"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Destination - uat_phsdiy"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[uat_phsdiy]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].Columns[Create_Dt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Create_Dt"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[Create_Dt]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Create_Dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].Columns[update_dt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="update_dt"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[update_dt]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[update_dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].Columns[pickup_dt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="pickup_dt"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[pickup_dt]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[pickup_dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].Columns[Equipment_Nbr]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Equipment_Nbr"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[Equipment_Nbr]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Equipment_Nbr]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].Columns[province]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="province"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[province]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[province]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].Columns[destination_warehouse]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="destination_warehouse"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[destination_warehouse]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[destination_warehouse]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].Columns[origin_warehouse]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="origin_warehouse"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[origin_warehouse]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[origin_warehouse]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].Columns[origin_province]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="origin_province"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[origin_province]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[origin_province]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].Columns[DELIVERED_Dt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DELIVERED_Dt"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[DELIVERED_Dt]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[DELIVERED_Dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].Columns[stop_Doc_Processing]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="stop_Doc_Processing"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[stop_Doc_Processing]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[stop_Doc_Processing]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].Columns[start_doc_processing]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="start_doc_processing"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[start_doc_processing]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[start_doc_processing]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].Columns[gate_in]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="gate_in"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[gate_in]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[gate_in]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].Columns[Load_Dt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Load_Dt"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[Load_Dt]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Load_Dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].Columns[gate_out]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="gate_out"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[gate_out]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[gate_out]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].Columns[consignee_accepted]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="consignee_accepted"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[consignee_accepted]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[consignee_accepted]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].Columns[Truck_type]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Truck_type"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[Truck_type]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Truck_type]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].Columns[truck_status]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="truck_status"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[truck_status]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[truck_status]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].Columns[Asset_Number]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Asset_Number"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[Asset_Number]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Asset_Number]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].Columns[Tag_Number]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Tag_Number"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[Tag_Number]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Tag_Number]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].Columns[carrier]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="carrier"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[carrier]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[carrier]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].Columns[shipper]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="shipper"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[shipper]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[shipper]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].Columns[BAYASSIGN_dt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="BAYASSIGN_dt"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[BAYASSIGN_dt]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[BAYASSIGN_dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].Columns[Unit_Count]"
+                      cachedDataType="r8"
+                      cachedName="Unit_Count"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[Unit_Count]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Unit_Count]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].Columns[Delivered_Unit_Count]"
+                      cachedDataType="r8"
+                      cachedName="Delivered_Unit_Count"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[Delivered_Unit_Count]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Delivered_Unit_Count]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].Columns[Pickup_Unit_Count]"
+                      cachedDataType="r8"
+                      cachedName="Pickup_Unit_Count"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[Pickup_Unit_Count]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Pickup_Unit_Count]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].Columns[Comment_Txt]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Comment_Txt"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[Comment_Txt]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Comment_Txt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].Columns[location_name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="location_name"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[location_name]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[location_name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].Columns[unit_of_measure]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="unit_of_measure"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[unit_of_measure]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[unit_of_measure]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[Create_Dt]"
+                      dataType="dbTimeStamp"
+                      name="Create_Dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[update_dt]"
+                      dataType="dbTimeStamp"
+                      name="update_dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[pickup_dt]"
+                      dataType="dbTimeStamp"
+                      name="pickup_dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[Equipment_Nbr]"
+                      dataType="wstr"
+                      length="255"
+                      name="Equipment_Nbr" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[province]"
+                      dataType="wstr"
+                      length="255"
+                      name="province" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[destination_warehouse]"
+                      dataType="wstr"
+                      length="255"
+                      name="destination_warehouse" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[origin_warehouse]"
+                      dataType="wstr"
+                      length="255"
+                      name="origin_warehouse" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[origin_province]"
+                      dataType="wstr"
+                      length="255"
+                      name="origin_province" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[DELIVERED_Dt]"
+                      dataType="dbTimeStamp"
+                      name="DELIVERED_Dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[stop_Doc_Processing]"
+                      dataType="dbTimeStamp"
+                      name="stop_Doc_Processing" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[start_doc_processing]"
+                      dataType="dbTimeStamp"
+                      name="start_doc_processing" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[gate_in]"
+                      dataType="dbTimeStamp"
+                      name="gate_in" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[Load_Dt]"
+                      dataType="dbTimeStamp"
+                      name="Load_Dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[gate_out]"
+                      dataType="dbTimeStamp"
+                      name="gate_out" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[consignee_accepted]"
+                      dataType="dbTimeStamp"
+                      name="consignee_accepted" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[Truck_type]"
+                      dataType="wstr"
+                      length="255"
+                      name="Truck_type" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[truck_status]"
+                      dataType="wstr"
+                      length="255"
+                      name="truck_status" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[Asset_Number]"
+                      dataType="wstr"
+                      length="255"
+                      name="Asset_Number" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[Tag_Number]"
+                      dataType="wstr"
+                      length="255"
+                      name="Tag_Number" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[carrier]"
+                      dataType="wstr"
+                      length="255"
+                      name="carrier" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[shipper]"
+                      dataType="wstr"
+                      length="255"
+                      name="shipper" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[BAYASSIGN_dt]"
+                      dataType="dbTimeStamp"
+                      name="BAYASSIGN_dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[Unit_Count]"
+                      dataType="r8"
+                      name="Unit_Count" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[Delivered_Unit_Count]"
+                      dataType="r8"
+                      name="Delivered_Unit_Count" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[Pickup_Unit_Count]"
+                      dataType="r8"
+                      name="Pickup_Unit_Count" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[Comment_Txt]"
+                      dataType="wstr"
+                      length="255"
+                      name="Comment_Txt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[unit_of_measure]"
+                      dataType="wstr"
+                      length="255"
+                      name="unit_of_measure" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[location_name]"
+                      dataType="wstr"
+                      length="255"
+                      name="location_name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input].ExternalColumns[RECORD_KEY]"
+                      dataType="i4"
+                      name="RECORD_KEY" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - uat_phsdiy.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - uat_phsdiy.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - uat_phsdiy.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Source - uat_truckstatus_csv"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[Create_Dt]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[Create_Dt]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[Create_Dt]"
+                      name="Create_Dt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[update_dt]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[update_dt]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[update_dt]"
+                      name="update_dt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[pickup_dt]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[pickup_dt]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[pickup_dt]"
+                      name="pickup_dt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[Equipment_Nbr]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[Equipment_Nbr]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[Equipment_Nbr]"
+                      name="Equipment_Nbr"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[province]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[province]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[province]"
+                      name="province"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[destination_warehouse]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[destination_warehouse]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[destination_warehouse]"
+                      name="destination_warehouse"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[origin_warehouse]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[origin_warehouse]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[origin_warehouse]"
+                      name="origin_warehouse"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[origin_province]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[origin_province]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[origin_province]"
+                      name="origin_province"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[DELIVERED_Dt]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[DELIVERED_Dt]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[DELIVERED_Dt]"
+                      name="DELIVERED_Dt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[stop_Doc_Processing]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[stop_Doc_Processing]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[stop_Doc_Processing]"
+                      name="stop_Doc_Processing"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[start_doc_processing]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[start_doc_processing]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[start_doc_processing]"
+                      name="start_doc_processing"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[gate_in]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[gate_in]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[gate_in]"
+                      name="gate_in"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[Load_Dt]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[Load_Dt]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[Load_Dt]"
+                      name="Load_Dt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[gate_out]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[gate_out]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[gate_out]"
+                      name="gate_out"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[consignee_accepted]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[consignee_accepted]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[consignee_accepted]"
+                      name="consignee_accepted"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[Truck_type]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[Truck_type]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[Truck_type]"
+                      name="Truck_type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[truck_status]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[truck_status]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[truck_status]"
+                      name="truck_status"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[Asset_Number]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[Asset_Number]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[Asset_Number]"
+                      name="Asset_Number"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[Tag_Number]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[Tag_Number]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[Tag_Number]"
+                      name="Tag_Number"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[carrier]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[carrier]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[carrier]"
+                      name="carrier"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[shipper]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[shipper]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[shipper]"
+                      name="shipper"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[BAYASSIGN_dt]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[BAYASSIGN_dt]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[BAYASSIGN_dt]"
+                      name="BAYASSIGN_dt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[Unit_Count]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[Unit_Count]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[Unit_Count]"
+                      name="Unit_Count"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[Delivered_Unit_Count]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[Delivered_Unit_Count]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[Delivered_Unit_Count]"
+                      name="Delivered_Unit_Count"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[Pickup_Unit_Count]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[Pickup_Unit_Count]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[Pickup_Unit_Count]"
+                      name="Pickup_Unit_Count"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[Comment_Txt]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[Comment_Txt]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[Comment_Txt]"
+                      name="Comment_Txt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[location_name]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[location_name]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[location_name]"
+                      name="location_name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[unit_of_measure]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[unit_of_measure]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].Columns[unit_of_measure]"
+                      name="unit_of_measure"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[Create_Dt]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Create_Dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[update_dt]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="update_dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[pickup_dt]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="pickup_dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[Equipment_Nbr]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Equipment_Nbr" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[province]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="province" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[destination_warehouse]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="destination_warehouse" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[origin_warehouse]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="origin_warehouse" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[origin_province]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="origin_province" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[DELIVERED_Dt]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="DELIVERED_Dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[stop_Doc_Processing]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="stop_Doc_Processing" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[start_doc_processing]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="start_doc_processing" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[gate_in]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="gate_in" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[Load_Dt]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Load_Dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[gate_out]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="gate_out" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[consignee_accepted]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="consignee_accepted" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[Truck_type]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Truck_type" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[truck_status]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="truck_status" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[Asset_Number]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Asset_Number" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[Tag_Number]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Tag_Number" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[carrier]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="carrier" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[shipper]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="shipper" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[BAYASSIGN_dt]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="BAYASSIGN_dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[Unit_Count]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Unit_Count" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[Delivered_Unit_Count]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Delivered_Unit_Count" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[Pickup_Unit_Count]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Pickup_Unit_Count" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[Comment_Txt]"
+                      codePage="65001"
+                      dataType="str"
+                      length="255"
+                      name="Comment_Txt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[location_name]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="location_name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output].ExternalColumns[unit_of_measure]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="unit_of_measure" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task 1.Paths[Data Conversion Output]"
+              endId="Package\Data Flow Task 1\Destination - uat_phsdiy.Inputs[Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Data Flow Task 1.Paths[Flat File Source Output]"
+              endId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task 1\Source - uat_truckstatus_csv.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Preparation SQL Task 1"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{CC8DC852-828B-4C3F-B0F4-58B80120B81D}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Preparation SQL Task 1"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{19A6046E-4C54-4767-848C-F9B80DF514F8}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[uat_phsdiy]&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{D054ABB7-7600-48AB-91F7-5C6656330414\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{D054ABB7-7600-48AB-91F7-5C6656330414}"
+      DTS:From="Package\Preparation SQL Task 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{D054ABB7-7600-48AB-91F7-5C6656330414}"
+      DTS:To="Package\Data Flow Task 1" />
+  </DTS:PrecedenceConstraints>
+</DTS:Executable>

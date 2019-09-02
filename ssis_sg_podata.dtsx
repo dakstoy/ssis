@@ -1,0 +1,3125 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/26/2018 2:35:49 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="KidsNextDoor"
+  DTS:CreatorName="KidsNextDoor\bumbleprime"
+  DTS:Description="SSIS Package Description"
+  DTS:DTSID="{3EE6A8E0-97BE-47DA-97F5-D1F4F24262FF}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.0800.90"
+  DTS:LocaleID="1033"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="ssis_sg_podata"
+  DTS:VersionGUID="{BD94C1E3-8030-48E6-9624-62291C8A8A0D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8BEC2E69-19C0-40D8-A491-2F771FB693D6}"
+      DTS:ObjectName="DestinationConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=opserver.database.windows.net;User ID=openport@opserver;Initial Catalog=OpDb;Provider=SQLNCLI11;Auto Translate=false;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZBjD0Tmsckqn8fReeJ1LdgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABhjlKaPFThQCNGk/1zQKBiiRqLagnhzKQeV/3dS/IaWgAAAAAOgAAAAAIAACAAAABjZZn1q7SJsunJNM4ZRyyT59mus0qnF4vRh/XRQzHBiiAAAACMXbs8PU3SJPvvQvUiuWUJEAHQbSA6AuVljB2Ys8ZKSEAAAABg+aIO/7kWbnOVHvI4wvOpeLBeYKAc62Su7SvuRwbzDizFuXFpdsMCaxf5dUm4I+/Vo8Tk2udtDYXOha2MRUYd</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{A4688ABA-60EB-4D54-A8EC-390F11F72E0F}"
+      DTS:ObjectName="SourceConnectionFlatFile">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\Users\bumbleprime\Desktop\MYSQL_Data_Feed\sg_podata.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="partner_cd"
+              DTS:DTSID="{7E8BE6EB-0F57-44F5-9DB2-C67F8DDBAB58}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="parent_partner_cd"
+              DTS:DTSID="{5517F306-6D71-4804-887A-A3DF7C6D6A78}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="assigned_carrier"
+              DTS:DTSID="{7CEE9F2A-40B5-419C-A865-BD693D159A14}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="order_nbr"
+              DTS:DTSID="{7E45678A-CAA2-4225-A469-2B5B73AA8A9A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="delivery_nbr"
+              DTS:DTSID="{95B6D257-42DE-47EF-9A93-F75F50A738B2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="customer_reference_nbr"
+              DTS:DTSID="{83CA003B-21FF-44A0-B3BE-87F3D1A51E99}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="pickup_dt"
+              DTS:DTSID="{7522459C-FFAB-48CB-AF91-C6D0B45EC5E6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="requested_delivery_dt"
+              DTS:DTSID="{CEAFBC6B-6211-4A26-8BE7-475890F23F1D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="origin"
+              DTS:DTSID="{01D37C7F-45DC-43FE-AE4B-070CD2CA0B92}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="destination"
+              DTS:DTSID="{BD1D5A1C-CA44-44AC-97AF-A1AE84734515}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dest_address"
+              DTS:DTSID="{B7248C97-9142-4818-8E2A-AF97621D7DAB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dest_city"
+              DTS:DTSID="{9E203428-5888-466E-B380-98629573E7E6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dest_district"
+              DTS:DTSID="{E8708DC4-D420-4FFD-BB88-24A3FD2652C8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dest_state_province"
+              DTS:DTSID="{B11CCFDF-3616-4A92-A94B-6BB4ECF070AE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="order_type"
+              DTS:DTSID="{E7DE1013-2138-48CC-BE44-488789C49733}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="sales_channel"
+              DTS:DTSID="{522D32D6-88DC-464F-B708-603292A5CB35}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="category"
+              DTS:DTSID="{5E0A95D1-5696-4001-89A1-6E7852EFE5C0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="transportation"
+              DTS:DTSID="{7A550379-D043-47E4-9D7E-1AFEB6FA8132}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="equipment_type"
+              DTS:DTSID="{74CD8C05-37AD-44FD-B257-02F39DC5B782}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="recommended_carrier"
+              DTS:DTSID="{4799ABF5-3BF7-4BC4-B996-283941E8B135}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PRO_BILL_NBR"
+              DTS:DTSID="{1939E79A-7FAE-49B1-930E-52A37C01D878}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="driver_phone"
+              DTS:DTSID="{6FEA1CCD-2960-459D-9C67-E08051A71EAA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="status"
+              DTS:DTSID="{6523E524-3DE2-4D2C-A89F-2B99A3A47630}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="total_qty"
+              DTS:DTSID="{3B049716-E833-4956-9EB4-7033AC65406F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="uom"
+              DTS:DTSID="{5F19672B-09C9-45DA-97EF-A378BDD19CFE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="weight"
+              DTS:DTSID="{F94F805E-5121-4DEF-90A8-E866DB1D01FE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="volume"
+              DTS:DTSID="{B7B14FDC-6183-41B9-940D-EA46CCB96B06}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="consolidated"
+              DTS:DTSID="{15201639-996A-4C91-AB3E-CA3DDA1C690D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Order_upload_Dt"
+              DTS:DTSID="{9F1A720A-7F64-464B-9688-F1B303D3588D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="shipment_requested_delivery_dt"
+              DTS:DTSID="{E3D5C79A-B654-46C0-B553-C0DBA988788E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Actual_Delivery_Dt"
+              DTS:DTSID="{DEC6069B-DA7F-47F9-8414-BEC30C2977B7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Status_Id"
+              DTS:DTSID="{6653E712-8D69-4FD4-AC35-E66F4D76F4D0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="status_cd"
+              DTS:DTSID="{1DB18556-ABB0-4BAD-9908-4FF6F84A1181}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dispatch_status"
+              DTS:DTSID="{49A394A7-C4EB-457C-94C4-45E9A3426468}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="delivered_unit_count"
+              DTS:DTSID="{0D0C67EC-36BA-4D73-A58A-1FF8C69BAB92}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="provider_name"
+              DTS:DTSID="{86DD5FAA-10BD-4705-8C70-E2CACC1B12C5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Driver"
+              DTS:DTSID="{B4A442AC-DD95-4B48-B274-5DE9E5DB83DA}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task 1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DTSID="{03A45A16-F994-4D48-A3CD-8B02E277076B}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task 1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task 1\Data Conversion 0 - 0"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion 0 - 0"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[partner_cd]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="partner_cd"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[partner_cd]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[parent_partner_cd]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="parent_partner_cd"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[parent_partner_cd]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[assigned_carrier]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="assigned_carrier"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[assigned_carrier]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[order_nbr]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="order_nbr"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[order_nbr]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[delivery_nbr]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="delivery_nbr"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[delivery_nbr]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[customer_reference_nbr]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="customer_reference_nbr"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[customer_reference_nbr]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[pickup_dt]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="pickup_dt"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[pickup_dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[requested_delivery_dt]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="requested_delivery_dt"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[requested_delivery_dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[origin]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="origin"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[origin]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[destination]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="destination"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[destination]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[dest_address]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="dest_address"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[dest_address]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[dest_city]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="dest_city"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[dest_city]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[dest_district]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="dest_district"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[dest_district]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[dest_state_province]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="dest_state_province"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[dest_state_province]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[order_type]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="order_type"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[order_type]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[sales_channel]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="sales_channel"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[sales_channel]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[category]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="category"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[category]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[transportation]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="transportation"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[transportation]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[equipment_type]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="equipment_type"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[equipment_type]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[recommended_carrier]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="recommended_carrier"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[recommended_carrier]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[PRO_BILL_NBR]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PRO_BILL_NBR"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[PRO_BILL_NBR]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[driver_phone]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="driver_phone"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[driver_phone]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[status]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="status"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[status]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[total_qty]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="total_qty"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[total_qty]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[uom]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="uom"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[uom]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[weight]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="weight"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[weight]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[volume]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="volume"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[volume]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[consolidated]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="consolidated"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[consolidated]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Order_upload_Dt]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Order_upload_Dt"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[Order_upload_Dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[shipment_requested_delivery_dt]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="shipment_requested_delivery_dt"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[shipment_requested_delivery_dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Actual_Delivery_Dt]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Actual_Delivery_Dt"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[Actual_Delivery_Dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Status_Id]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Status_Id"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[Status_Id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[status_cd]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="status_cd"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[status_cd]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[dispatch_status]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="dispatch_status"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[dispatch_status]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[delivered_unit_count]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="delivered_unit_count"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[delivered_unit_count]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[provider_name]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="provider_name"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[provider_name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Driver]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Driver"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[Driver]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[partner_cd]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[partner_cd]"
+                      name="partner_cd"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[partner_cd]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[parent_partner_cd]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[parent_partner_cd]"
+                      name="parent_partner_cd"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[parent_partner_cd]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[assigned_carrier]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[assigned_carrier]"
+                      name="assigned_carrier"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[assigned_carrier]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[order_nbr]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[order_nbr]"
+                      name="order_nbr"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[order_nbr]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[delivery_nbr]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[delivery_nbr]"
+                      name="delivery_nbr"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[delivery_nbr]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[customer_reference_nbr]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[customer_reference_nbr]"
+                      name="customer_reference_nbr"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[customer_reference_nbr]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[pickup_dt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[pickup_dt]"
+                      name="pickup_dt"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[pickup_dt]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[requested_delivery_dt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[requested_delivery_dt]"
+                      name="requested_delivery_dt"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[requested_delivery_dt]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[origin]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="500"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[origin]"
+                      name="origin"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[origin]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[destination]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="500"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[destination]"
+                      name="destination"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[destination]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[dest_address]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="500"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[dest_address]"
+                      name="dest_address"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[dest_address]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[dest_city]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="500"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[dest_city]"
+                      name="dest_city"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[dest_city]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[dest_district]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[dest_district]"
+                      name="dest_district"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[dest_district]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[dest_state_province]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[dest_state_province]"
+                      name="dest_state_province"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[dest_state_province]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[order_type]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[order_type]"
+                      name="order_type"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[order_type]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[sales_channel]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[sales_channel]"
+                      name="sales_channel"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[sales_channel]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[category]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[category]"
+                      name="category"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[category]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[transportation]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[transportation]"
+                      name="transportation"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[transportation]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[equipment_type]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[equipment_type]"
+                      name="equipment_type"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[equipment_type]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[recommended_carrier]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[recommended_carrier]"
+                      name="recommended_carrier"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[recommended_carrier]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[PRO_BILL_NBR]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[PRO_BILL_NBR]"
+                      name="PRO_BILL_NBR"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[PRO_BILL_NBR]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[driver_phone]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[driver_phone]"
+                      name="driver_phone"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[driver_phone]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[status]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[status]"
+                      name="status"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[status]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[total_qty]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[total_qty]"
+                      name="total_qty"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[total_qty]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[uom]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[uom]"
+                      name="uom"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[uom]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[weight]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[weight]"
+                      name="weight"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[weight]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[volume]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[volume]"
+                      name="volume"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[volume]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[consolidated]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[consolidated]"
+                      name="consolidated"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[consolidated]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Order_upload_Dt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Order_upload_Dt]"
+                      name="Order_upload_Dt"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[Order_upload_Dt]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[shipment_requested_delivery_dt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[shipment_requested_delivery_dt]"
+                      name="shipment_requested_delivery_dt"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[shipment_requested_delivery_dt]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Actual_Delivery_Dt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Actual_Delivery_Dt]"
+                      name="Actual_Delivery_Dt"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[Actual_Delivery_Dt]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Status_Id]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Status_Id]"
+                      name="Status_Id"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[Status_Id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[status_cd]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[status_cd]"
+                      name="status_cd"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[status_cd]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[dispatch_status]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[dispatch_status]"
+                      name="dispatch_status"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[dispatch_status]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[delivered_unit_count]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[delivered_unit_count]"
+                      name="delivered_unit_count"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[delivered_unit_count]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[provider_name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[provider_name]"
+                      name="provider_name"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[provider_name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Driver]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Driver]"
+                      name="Driver"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[Driver]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Destination - podata"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Destination - podata"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[podata]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Destination - podata.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].Columns[partner_cd]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="partner_cd"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[partner_cd]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[partner_cd]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].Columns[parent_partner_cd]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="parent_partner_cd"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[parent_partner_cd]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[parent_partner_cd]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].Columns[assigned_carrier]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="assigned_carrier"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[assigned_carrier]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[assigned_carrier]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].Columns[order_nbr]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="order_nbr"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[order_nbr]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[order_nbr]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].Columns[delivery_nbr]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="delivery_nbr"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[delivery_nbr]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[delivery_nbr]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].Columns[customer_reference_nbr]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="customer_reference_nbr"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[customer_reference_nbr]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[customer_reference_nbr]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].Columns[pickup_dt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="pickup_dt"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[pickup_dt]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[pickup_dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].Columns[requested_delivery_dt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="requested_delivery_dt"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[requested_delivery_dt]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[requested_delivery_dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].Columns[origin]"
+                      cachedDataType="wstr"
+                      cachedLength="500"
+                      cachedName="origin"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[origin]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[origin]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].Columns[destination]"
+                      cachedDataType="wstr"
+                      cachedLength="500"
+                      cachedName="destination"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[destination]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[destination]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].Columns[dest_address]"
+                      cachedDataType="wstr"
+                      cachedLength="500"
+                      cachedName="dest_address"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[dest_address]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[dest_address]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].Columns[dest_city]"
+                      cachedDataType="wstr"
+                      cachedLength="500"
+                      cachedName="dest_city"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[dest_city]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[dest_city]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].Columns[dest_district]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="dest_district"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[dest_district]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[dest_district]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].Columns[dest_state_province]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="dest_state_province"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[dest_state_province]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[dest_state_province]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].Columns[order_type]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="order_type"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[order_type]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[order_type]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].Columns[sales_channel]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="sales_channel"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[sales_channel]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[sales_channel]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].Columns[category]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="category"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[category]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[category]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].Columns[transportation]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="transportation"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[transportation]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[transportation]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].Columns[equipment_type]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="equipment_type"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[equipment_type]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[equipment_type]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].Columns[recommended_carrier]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="recommended_carrier"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[recommended_carrier]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[recommended_carrier]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].Columns[PRO_BILL_NBR]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PRO_BILL_NBR"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[PRO_BILL_NBR]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[PRO_BILL_NBR]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].Columns[driver_phone]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="driver_phone"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[driver_phone]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[driver_phone]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].Columns[status]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="status"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[status]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[status]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].Columns[total_qty]"
+                      cachedDataType="r8"
+                      cachedName="total_qty"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[total_qty]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[total_qty]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].Columns[uom]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="uom"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[uom]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[uom]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].Columns[weight]"
+                      cachedDataType="r8"
+                      cachedName="weight"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[weight]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[weight]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].Columns[volume]"
+                      cachedDataType="r8"
+                      cachedName="volume"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[volume]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[volume]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].Columns[consolidated]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="consolidated"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[consolidated]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[consolidated]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].Columns[Order_upload_Dt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Order_upload_Dt"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[Order_upload_Dt]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Order_upload_Dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].Columns[shipment_requested_delivery_dt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="shipment_requested_delivery_dt"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[shipment_requested_delivery_dt]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[shipment_requested_delivery_dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].Columns[Actual_Delivery_Dt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Actual_Delivery_Dt"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[Actual_Delivery_Dt]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Actual_Delivery_Dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].Columns[Status_Id]"
+                      cachedDataType="r8"
+                      cachedName="Status_Id"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[Status_Id]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Status_Id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].Columns[status_cd]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="status_cd"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[status_cd]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[status_cd]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].Columns[dispatch_status]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="dispatch_status"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[dispatch_status]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[dispatch_status]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].Columns[delivered_unit_count]"
+                      cachedDataType="r8"
+                      cachedName="delivered_unit_count"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[delivered_unit_count]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[delivered_unit_count]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].Columns[provider_name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="provider_name"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[provider_name]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[provider_name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].Columns[Driver]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Driver"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[Driver]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Driver]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[partner_cd]"
+                      dataType="wstr"
+                      length="255"
+                      name="partner_cd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[parent_partner_cd]"
+                      dataType="wstr"
+                      length="255"
+                      name="parent_partner_cd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[assigned_carrier]"
+                      dataType="wstr"
+                      length="255"
+                      name="assigned_carrier" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[order_nbr]"
+                      dataType="wstr"
+                      length="255"
+                      name="order_nbr" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[delivery_nbr]"
+                      dataType="wstr"
+                      length="255"
+                      name="delivery_nbr" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[customer_reference_nbr]"
+                      dataType="wstr"
+                      length="255"
+                      name="customer_reference_nbr" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[pickup_dt]"
+                      dataType="dbTimeStamp"
+                      name="pickup_dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[requested_delivery_dt]"
+                      dataType="dbTimeStamp"
+                      name="requested_delivery_dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[origin]"
+                      dataType="wstr"
+                      length="500"
+                      name="origin" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[destination]"
+                      dataType="wstr"
+                      length="500"
+                      name="destination" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[dest_address]"
+                      dataType="wstr"
+                      length="500"
+                      name="dest_address" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[dest_city]"
+                      dataType="wstr"
+                      length="500"
+                      name="dest_city" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[dest_district]"
+                      dataType="wstr"
+                      length="255"
+                      name="dest_district" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[dest_state_province]"
+                      dataType="wstr"
+                      length="255"
+                      name="dest_state_province" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[order_type]"
+                      dataType="wstr"
+                      length="255"
+                      name="order_type" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[sales_channel]"
+                      dataType="wstr"
+                      length="255"
+                      name="sales_channel" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[category]"
+                      dataType="wstr"
+                      length="255"
+                      name="category" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[transportation]"
+                      dataType="wstr"
+                      length="255"
+                      name="transportation" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[equipment_type]"
+                      dataType="wstr"
+                      length="255"
+                      name="equipment_type" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[recommended_carrier]"
+                      dataType="wstr"
+                      length="255"
+                      name="recommended_carrier" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[PRO_BILL_NBR]"
+                      dataType="wstr"
+                      length="255"
+                      name="PRO_BILL_NBR" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[driver_phone]"
+                      dataType="wstr"
+                      length="255"
+                      name="driver_phone" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[rated_cost]"
+                      dataType="r8"
+                      name="rated_cost" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[status]"
+                      dataType="wstr"
+                      length="255"
+                      name="status" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[total_qty]"
+                      dataType="r8"
+                      name="total_qty" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[uom]"
+                      dataType="wstr"
+                      length="255"
+                      name="uom" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[weight]"
+                      dataType="r8"
+                      name="weight" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[volume]"
+                      dataType="r8"
+                      name="volume" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[consolidated]"
+                      dataType="wstr"
+                      length="255"
+                      name="consolidated" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[Order_upload_Dt]"
+                      dataType="dbTimeStamp"
+                      name="Order_upload_Dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[shipment_requested_delivery_dt]"
+                      dataType="dbTimeStamp"
+                      name="shipment_requested_delivery_dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[Actual_Delivery_Dt]"
+                      dataType="dbTimeStamp"
+                      name="Actual_Delivery_Dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[Status_Id]"
+                      dataType="r8"
+                      name="Status_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[status_cd]"
+                      dataType="wstr"
+                      length="255"
+                      name="status_cd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[dispatch_status]"
+                      dataType="wstr"
+                      length="255"
+                      name="dispatch_status" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[delivered_unit_count]"
+                      dataType="r8"
+                      name="delivered_unit_count" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[provider_name]"
+                      dataType="wstr"
+                      length="255"
+                      name="provider_name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[Driver]"
+                      dataType="wstr"
+                      length="255"
+                      name="Driver" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input].ExternalColumns[RECORD_KEY]"
+                      dataType="i4"
+                      name="RECORD_KEY" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Destination - podata.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - podata.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - podata.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - podata.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Source - sg_podata_csv"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Source - sg_podata_csv"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Source - sg_podata_csv.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[partner_cd]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[partner_cd]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[partner_cd]"
+                      name="partner_cd"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[parent_partner_cd]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[parent_partner_cd]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[parent_partner_cd]"
+                      name="parent_partner_cd"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[assigned_carrier]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[assigned_carrier]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[assigned_carrier]"
+                      name="assigned_carrier"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[order_nbr]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[order_nbr]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[order_nbr]"
+                      name="order_nbr"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[delivery_nbr]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[delivery_nbr]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[delivery_nbr]"
+                      name="delivery_nbr"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[customer_reference_nbr]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[customer_reference_nbr]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[customer_reference_nbr]"
+                      name="customer_reference_nbr"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[pickup_dt]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[pickup_dt]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[pickup_dt]"
+                      name="pickup_dt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[requested_delivery_dt]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[requested_delivery_dt]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[requested_delivery_dt]"
+                      name="requested_delivery_dt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[origin]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[origin]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[origin]"
+                      name="origin"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[destination]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[destination]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[destination]"
+                      name="destination"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[dest_address]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[dest_address]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[dest_address]"
+                      name="dest_address"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[dest_city]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[dest_city]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[dest_city]"
+                      name="dest_city"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[dest_district]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[dest_district]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[dest_district]"
+                      name="dest_district"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[dest_state_province]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[dest_state_province]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[dest_state_province]"
+                      name="dest_state_province"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[order_type]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[order_type]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[order_type]"
+                      name="order_type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[sales_channel]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[sales_channel]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[sales_channel]"
+                      name="sales_channel"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[category]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[category]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[category]"
+                      name="category"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[transportation]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[transportation]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[transportation]"
+                      name="transportation"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[equipment_type]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[equipment_type]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[equipment_type]"
+                      name="equipment_type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[recommended_carrier]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[recommended_carrier]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[recommended_carrier]"
+                      name="recommended_carrier"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[PRO_BILL_NBR]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[PRO_BILL_NBR]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[PRO_BILL_NBR]"
+                      name="PRO_BILL_NBR"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[driver_phone]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[driver_phone]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[driver_phone]"
+                      name="driver_phone"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[status]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[status]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[status]"
+                      name="status"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[total_qty]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[total_qty]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[total_qty]"
+                      name="total_qty"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[uom]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[uom]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[uom]"
+                      name="uom"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[weight]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[weight]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[weight]"
+                      name="weight"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[volume]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[volume]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[volume]"
+                      name="volume"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[consolidated]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[consolidated]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[consolidated]"
+                      name="consolidated"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[Order_upload_Dt]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[Order_upload_Dt]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[Order_upload_Dt]"
+                      name="Order_upload_Dt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[shipment_requested_delivery_dt]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[shipment_requested_delivery_dt]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[shipment_requested_delivery_dt]"
+                      name="shipment_requested_delivery_dt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[Actual_Delivery_Dt]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[Actual_Delivery_Dt]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[Actual_Delivery_Dt]"
+                      name="Actual_Delivery_Dt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[Status_Id]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[Status_Id]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[Status_Id]"
+                      name="Status_Id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[status_cd]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[status_cd]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[status_cd]"
+                      name="status_cd"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[dispatch_status]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[dispatch_status]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[dispatch_status]"
+                      name="dispatch_status"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[delivered_unit_count]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[delivered_unit_count]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[delivered_unit_count]"
+                      name="delivered_unit_count"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[provider_name]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[provider_name]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[provider_name]"
+                      name="provider_name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[Driver]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[Driver]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].Columns[Driver]"
+                      name="Driver"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[partner_cd]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="partner_cd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[parent_partner_cd]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="parent_partner_cd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[assigned_carrier]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="assigned_carrier" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[order_nbr]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="order_nbr" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[delivery_nbr]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="delivery_nbr" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[customer_reference_nbr]"
+                      codePage="65001"
+                      dataType="str"
+                      length="255"
+                      name="customer_reference_nbr" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[pickup_dt]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="pickup_dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[requested_delivery_dt]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="requested_delivery_dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[origin]"
+                      codePage="65001"
+                      dataType="str"
+                      length="255"
+                      name="origin" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[destination]"
+                      codePage="65001"
+                      dataType="str"
+                      length="255"
+                      name="destination" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[dest_address]"
+                      codePage="65001"
+                      dataType="str"
+                      length="255"
+                      name="dest_address" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[dest_city]"
+                      codePage="65001"
+                      dataType="str"
+                      length="255"
+                      name="dest_city" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[dest_district]"
+                      codePage="65001"
+                      dataType="str"
+                      length="255"
+                      name="dest_district" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[dest_state_province]"
+                      codePage="65001"
+                      dataType="str"
+                      length="255"
+                      name="dest_state_province" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[order_type]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="order_type" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[sales_channel]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="sales_channel" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[category]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="category" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[transportation]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="transportation" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[equipment_type]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="equipment_type" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[recommended_carrier]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="recommended_carrier" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[PRO_BILL_NBR]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="PRO_BILL_NBR" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[driver_phone]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="driver_phone" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[status]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="status" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[total_qty]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="total_qty" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[uom]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="uom" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[weight]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="weight" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[volume]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="volume" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[consolidated]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="consolidated" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[Order_upload_Dt]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Order_upload_Dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[shipment_requested_delivery_dt]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="shipment_requested_delivery_dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[Actual_Delivery_Dt]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Actual_Delivery_Dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[Status_Id]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Status_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[status_cd]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="status_cd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[dispatch_status]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="dispatch_status" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[delivered_unit_count]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="delivered_unit_count" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[provider_name]"
+                      codePage="65001"
+                      dataType="str"
+                      length="255"
+                      name="provider_name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output].ExternalColumns[Driver]"
+                      codePage="65001"
+                      dataType="str"
+                      length="255"
+                      name="Driver" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task 1.Paths[Data Conversion Output]"
+              endId="Package\Data Flow Task 1\Destination - podata.Inputs[Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Data Flow Task 1.Paths[Flat File Source Output]"
+              endId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task 1\Source - sg_podata_csv.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+</DTS:Executable>

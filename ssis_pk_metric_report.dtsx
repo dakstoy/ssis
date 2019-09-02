@@ -1,0 +1,1905 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/16/2018 12:29:21 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="KidsNextDoor"
+  DTS:CreatorName="KidsNextDoor\bumbleprime"
+  DTS:Description="SSIS Package Description"
+  DTS:DTSID="{0EE06566-AB5A-45C5-AA0F-066CCDCA0981}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.0800.90"
+  DTS:LocaleID="1033"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="ssis_pk_metric_report"
+  DTS:VersionGUID="{22191B34-C234-48AF-A748-A4624517F990}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8CE1A682-C775-497A-9BBF-B5B33ACF73BC}"
+      DTS:ObjectName="DestinationConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=opserver.database.windows.net;User ID=openport@opserver;Initial Catalog=OpDb;Provider=SQLNCLI11;Auto Translate=false;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA3NnAxWI950K/K5SaRLPKYwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD3RzqIUTWqXQXmhFyakRO9xnX2k0k3fLdhCDTg7J/14QAAAAAOgAAAAAIAACAAAAD8XMb45i70muerVwYzl0dGYB1twwitvc1pxHS0p5NLCiAAAACSl670XQBoXiQtLgdvPpI1F41wcVNEGScuuXD8G1zWhEAAAACjS0cDSR/CaioEedtY+Ky2kMIxjWFHnR4T2feQy62Nk/sCEb3pZLY+o1ea8GiyBDYHutgBBK23f9HwEq+tYGuu</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{7B32B1E5-3159-43D5-82E1-A42B1F2F701B}"
+      DTS:ObjectName="SourceConnectionFlatFile">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\Users\bumbleprime\Desktop\MYSQL_Data_Feed\pk_metric_report.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="partner_cd"
+              DTS:DTSID="{415E08A7-F729-461F-BD10-3B36DBE9B39D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="parent_partner_cd"
+              DTS:DTSID="{3EC4BB16-3F45-427C-BF6D-755B6F90E79F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="assigned_carrier"
+              DTS:DTSID="{6D8D90BE-15EC-43DA-B9D3-F0E4614CF97C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PO_NBR"
+              DTS:DTSID="{D89258AF-5CAF-4837-9F8B-A2E6784EC2DF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RELEASE_NBR"
+              DTS:DTSID="{91EF930D-CA6A-4D14-97FF-9E311FEFC322}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="customer_reference_nbr"
+              DTS:DTSID="{5244869C-594D-4D12-9C48-179D9CFB30C2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="pickup_dt"
+              DTS:DTSID="{B22A8B6D-7452-43A5-897F-E662ED5B2B8C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="requested_delivery_dt"
+              DTS:DTSID="{851B30C5-2C3C-4500-81F7-C7054F7EB1F7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Order_upload_Dt"
+              DTS:DTSID="{CC5C9EAA-94E4-402F-B1F2-5F35D04DD98A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="shipment_order_number"
+              DTS:DTSID="{B7D160E8-8A32-4231-9973-01A6444ED82A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="shipment_delivery_nbr"
+              DTS:DTSID="{455556AD-8193-4F92-853E-F7313C607669}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="shipment_created"
+              DTS:DTSID="{1757DB5E-4E56-4EA7-AF70-4C1ABEDC5B30}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="shipment_requested_delivery_dt"
+              DTS:DTSID="{69A76403-3D85-4677-B2A8-3A0964AFA5E8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Actual_Delivery_Dt"
+              DTS:DTSID="{1390951E-4499-4E05-9699-8D7DD71340B9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="provider_name"
+              DTS:DTSID="{A0A4A099-D8A6-45EE-8188-C4BF941AC308}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Driver"
+              DTS:DTSID="{CB4781A1-C812-4664-B7DE-21A1C9395DF8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="phone_nbr"
+              DTS:DTSID="{E5D1E2D0-C902-4660-8D94-5A7549BD590B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="epod"
+              DTS:DTSID="{4A3137EC-B187-4449-9A86-B181590F101D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="image_uploaded"
+              DTS:DTSID="{430C591C-039C-4C17-80F9-B1F972B52A57}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="country_cd"
+              DTS:DTSID="{DD6023D4-8B5A-4764-9E50-2F6E77AFF3D7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="status_cd"
+              DTS:DTSID="{48F5AFDC-55A2-4541-A19D-7AF93A6A868C}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task 1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DTSID="{F1001869-E820-4ABD-89A8-7270A3D652EC}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task 1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task 1\Data Conversion 0 - 0"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion 0 - 0"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[partner_cd]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="partner_cd"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[partner_cd]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[parent_partner_cd]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="parent_partner_cd"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[parent_partner_cd]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[assigned_carrier]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="assigned_carrier"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[assigned_carrier]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[PO_NBR]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PO_NBR"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[PO_NBR]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[RELEASE_NBR]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="RELEASE_NBR"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[RELEASE_NBR]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[customer_reference_nbr]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="customer_reference_nbr"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[customer_reference_nbr]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[pickup_dt]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="pickup_dt"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[pickup_dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[requested_delivery_dt]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="requested_delivery_dt"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[requested_delivery_dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Order_upload_Dt]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Order_upload_Dt"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[Order_upload_Dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[shipment_order_number]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="shipment_order_number"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[shipment_order_number]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[shipment_delivery_nbr]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="shipment_delivery_nbr"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[shipment_delivery_nbr]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[shipment_created]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="shipment_created"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[shipment_created]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[shipment_requested_delivery_dt]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="shipment_requested_delivery_dt"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[shipment_requested_delivery_dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Actual_Delivery_Dt]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Actual_Delivery_Dt"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[Actual_Delivery_Dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[provider_name]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="provider_name"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[provider_name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Driver]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Driver"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[Driver]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[phone_nbr]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="phone_nbr"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[phone_nbr]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[epod]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="epod"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[epod]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[image_uploaded]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="image_uploaded"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[image_uploaded]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[country_cd]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="country_cd"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[country_cd]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[status_cd]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="status_cd"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[status_cd]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[partner_cd]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[partner_cd]"
+                      name="partner_cd"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[partner_cd]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[parent_partner_cd]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[parent_partner_cd]"
+                      name="parent_partner_cd"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[parent_partner_cd]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[assigned_carrier]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[assigned_carrier]"
+                      name="assigned_carrier"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[assigned_carrier]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[PO_NBR]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[PO_NBR]"
+                      name="PO_NBR"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[PO_NBR]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[RELEASE_NBR]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[RELEASE_NBR]"
+                      name="RELEASE_NBR"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[RELEASE_NBR]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[customer_reference_nbr]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[customer_reference_nbr]"
+                      name="customer_reference_nbr"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[customer_reference_nbr]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[pickup_dt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[pickup_dt]"
+                      name="pickup_dt"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[pickup_dt]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[requested_delivery_dt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[requested_delivery_dt]"
+                      name="requested_delivery_dt"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[requested_delivery_dt]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Order_upload_Dt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Order_upload_Dt]"
+                      name="Order_upload_Dt"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[Order_upload_Dt]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[shipment_order_number]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[shipment_order_number]"
+                      name="shipment_order_number"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[shipment_order_number]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[shipment_delivery_nbr]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[shipment_delivery_nbr]"
+                      name="shipment_delivery_nbr"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[shipment_delivery_nbr]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[shipment_created]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[shipment_created]"
+                      name="shipment_created"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[shipment_created]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[shipment_requested_delivery_dt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[shipment_requested_delivery_dt]"
+                      name="shipment_requested_delivery_dt"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[shipment_requested_delivery_dt]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Actual_Delivery_Dt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Actual_Delivery_Dt]"
+                      name="Actual_Delivery_Dt"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[Actual_Delivery_Dt]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[provider_name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[provider_name]"
+                      name="provider_name"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[provider_name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Driver]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Driver]"
+                      name="Driver"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[Driver]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[phone_nbr]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[phone_nbr]"
+                      name="phone_nbr"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[phone_nbr]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[epod]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[epod]"
+                      name="epod"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[epod]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[image_uploaded]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[image_uploaded]"
+                      name="image_uploaded"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[image_uploaded]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[country_cd]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[country_cd]"
+                      name="country_cd"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[country_cd]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[status_cd]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[status_cd]"
+                      name="status_cd"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[status_cd]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Destination - metric_report"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Destination - metric_report"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[metric_report]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Destination - metric_report.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].Columns[partner_cd]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="partner_cd"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[partner_cd]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[partner_cd]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].Columns[parent_partner_cd]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="parent_partner_cd"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[parent_partner_cd]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[parent_partner_cd]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].Columns[assigned_carrier]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="assigned_carrier"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[assigned_carrier]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[assigned_carrier]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].Columns[PO_NBR]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PO_NBR"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[PO_NBR]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[PO_NBR]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].Columns[RELEASE_NBR]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="RELEASE_NBR"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[RELEASE_NBR]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[RELEASE_NBR]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].Columns[customer_reference_nbr]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="customer_reference_nbr"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[customer_reference_nbr]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[customer_reference_nbr]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].Columns[pickup_dt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="pickup_dt"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[pickup_dt]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[pickup_dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].Columns[requested_delivery_dt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="requested_delivery_dt"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[requested_delivery_dt]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[requested_delivery_dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].Columns[Order_upload_Dt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Order_upload_Dt"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[Order_upload_Dt]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Order_upload_Dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].Columns[shipment_order_number]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="shipment_order_number"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[shipment_order_number]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[shipment_order_number]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].Columns[shipment_delivery_nbr]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="shipment_delivery_nbr"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[shipment_delivery_nbr]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[shipment_delivery_nbr]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].Columns[shipment_created]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="shipment_created"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[shipment_created]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[shipment_created]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].Columns[shipment_requested_delivery_dt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="shipment_requested_delivery_dt"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[shipment_requested_delivery_dt]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[shipment_requested_delivery_dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].Columns[Actual_Delivery_Dt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Actual_Delivery_Dt"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[Actual_Delivery_Dt]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Actual_Delivery_Dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].Columns[provider_name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="provider_name"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[provider_name]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[provider_name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].Columns[Driver]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Driver"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[Driver]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Driver]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].Columns[phone_nbr]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="phone_nbr"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[phone_nbr]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[phone_nbr]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].Columns[epod]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="epod"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[epod]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[epod]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].Columns[image_uploaded]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="image_uploaded"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[image_uploaded]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[image_uploaded]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].Columns[country_cd]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="country_cd"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[country_cd]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[country_cd]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].Columns[status_cd]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="status_cd"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[status_cd]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[status_cd]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[partner_cd]"
+                      dataType="wstr"
+                      length="255"
+                      name="partner_cd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[parent_partner_cd]"
+                      dataType="wstr"
+                      length="255"
+                      name="parent_partner_cd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[assigned_carrier]"
+                      dataType="wstr"
+                      length="255"
+                      name="assigned_carrier" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[PO_NBR]"
+                      dataType="wstr"
+                      length="255"
+                      name="PO_NBR" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[RELEASE_NBR]"
+                      dataType="wstr"
+                      length="255"
+                      name="RELEASE_NBR" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[customer_reference_nbr]"
+                      dataType="wstr"
+                      length="255"
+                      name="customer_reference_nbr" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[pickup_dt]"
+                      dataType="dbTimeStamp"
+                      name="pickup_dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[requested_delivery_dt]"
+                      dataType="dbTimeStamp"
+                      name="requested_delivery_dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[Order_upload_Dt]"
+                      dataType="dbTimeStamp"
+                      name="Order_upload_Dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[shipment_order_number]"
+                      dataType="wstr"
+                      length="255"
+                      name="shipment_order_number" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[shipment_delivery_nbr]"
+                      dataType="wstr"
+                      length="255"
+                      name="shipment_delivery_nbr" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[shipment_created]"
+                      dataType="wstr"
+                      length="255"
+                      name="shipment_created" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[shipment_requested_delivery_dt]"
+                      dataType="dbTimeStamp"
+                      name="shipment_requested_delivery_dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[Actual_Delivery_Dt]"
+                      dataType="dbTimeStamp"
+                      name="Actual_Delivery_Dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[provider_name]"
+                      dataType="wstr"
+                      length="255"
+                      name="provider_name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[Driver]"
+                      dataType="wstr"
+                      length="255"
+                      name="Driver" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[phone_nbr]"
+                      dataType="wstr"
+                      length="255"
+                      name="phone_nbr" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[epod]"
+                      dataType="wstr"
+                      length="255"
+                      name="epod" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[image_uploaded]"
+                      dataType="dbTimeStamp"
+                      name="image_uploaded" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[country_cd]"
+                      dataType="wstr"
+                      length="255"
+                      name="country_cd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[status_cd]"
+                      dataType="wstr"
+                      length="255"
+                      name="status_cd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input].ExternalColumns[RECORD_KEY]"
+                      dataType="i4"
+                      name="RECORD_KEY" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Destination - metric_report.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - metric_report.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - metric_report.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - metric_report.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Source - sg_metric_report_csv"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Source - sg_metric_report_csv"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[partner_cd]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].ExternalColumns[partner_cd]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[partner_cd]"
+                      name="partner_cd"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[parent_partner_cd]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].ExternalColumns[parent_partner_cd]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[parent_partner_cd]"
+                      name="parent_partner_cd"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[assigned_carrier]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].ExternalColumns[assigned_carrier]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[assigned_carrier]"
+                      name="assigned_carrier"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[PO_NBR]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].ExternalColumns[PO_NBR]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[PO_NBR]"
+                      name="PO_NBR"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[RELEASE_NBR]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].ExternalColumns[RELEASE_NBR]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[RELEASE_NBR]"
+                      name="RELEASE_NBR"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[customer_reference_nbr]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].ExternalColumns[customer_reference_nbr]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[customer_reference_nbr]"
+                      name="customer_reference_nbr"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[pickup_dt]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].ExternalColumns[pickup_dt]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[pickup_dt]"
+                      name="pickup_dt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[requested_delivery_dt]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].ExternalColumns[requested_delivery_dt]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[requested_delivery_dt]"
+                      name="requested_delivery_dt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[Order_upload_Dt]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].ExternalColumns[Order_upload_Dt]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[Order_upload_Dt]"
+                      name="Order_upload_Dt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[shipment_order_number]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].ExternalColumns[shipment_order_number]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[shipment_order_number]"
+                      name="shipment_order_number"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[shipment_delivery_nbr]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].ExternalColumns[shipment_delivery_nbr]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[shipment_delivery_nbr]"
+                      name="shipment_delivery_nbr"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[shipment_created]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].ExternalColumns[shipment_created]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[shipment_created]"
+                      name="shipment_created"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[shipment_requested_delivery_dt]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].ExternalColumns[shipment_requested_delivery_dt]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[shipment_requested_delivery_dt]"
+                      name="shipment_requested_delivery_dt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[Actual_Delivery_Dt]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].ExternalColumns[Actual_Delivery_Dt]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[Actual_Delivery_Dt]"
+                      name="Actual_Delivery_Dt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[provider_name]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].ExternalColumns[provider_name]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[provider_name]"
+                      name="provider_name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[Driver]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].ExternalColumns[Driver]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[Driver]"
+                      name="Driver"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[phone_nbr]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].ExternalColumns[phone_nbr]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[phone_nbr]"
+                      name="phone_nbr"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[epod]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].ExternalColumns[epod]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[epod]"
+                      name="epod"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[image_uploaded]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].ExternalColumns[image_uploaded]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[image_uploaded]"
+                      name="image_uploaded"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[country_cd]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].ExternalColumns[country_cd]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[country_cd]"
+                      name="country_cd"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[status_cd]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].ExternalColumns[status_cd]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].Columns[status_cd]"
+                      name="status_cd"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].ExternalColumns[partner_cd]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="partner_cd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].ExternalColumns[parent_partner_cd]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="parent_partner_cd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].ExternalColumns[assigned_carrier]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="assigned_carrier" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].ExternalColumns[PO_NBR]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="PO_NBR" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].ExternalColumns[RELEASE_NBR]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="RELEASE_NBR" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].ExternalColumns[customer_reference_nbr]"
+                      codePage="65001"
+                      dataType="str"
+                      length="255"
+                      name="customer_reference_nbr" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].ExternalColumns[pickup_dt]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="pickup_dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].ExternalColumns[requested_delivery_dt]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="requested_delivery_dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].ExternalColumns[Order_upload_Dt]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Order_upload_Dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].ExternalColumns[shipment_order_number]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="shipment_order_number" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].ExternalColumns[shipment_delivery_nbr]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="shipment_delivery_nbr" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].ExternalColumns[shipment_created]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="shipment_created" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].ExternalColumns[shipment_requested_delivery_dt]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="shipment_requested_delivery_dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].ExternalColumns[Actual_Delivery_Dt]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Actual_Delivery_Dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].ExternalColumns[provider_name]"
+                      codePage="65001"
+                      dataType="str"
+                      length="255"
+                      name="provider_name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].ExternalColumns[Driver]"
+                      codePage="65001"
+                      dataType="str"
+                      length="255"
+                      name="Driver" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].ExternalColumns[phone_nbr]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="phone_nbr" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].ExternalColumns[epod]"
+                      codePage="65001"
+                      dataType="str"
+                      length="255"
+                      name="epod" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].ExternalColumns[image_uploaded]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="image_uploaded" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].ExternalColumns[country_cd]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="country_cd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output].ExternalColumns[status_cd]"
+                      codePage="65001"
+                      dataType="str"
+                      length="255"
+                      name="status_cd" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task 1.Paths[Data Conversion Output]"
+              endId="Package\Data Flow Task 1\Destination - metric_report.Inputs[Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Data Flow Task 1.Paths[Flat File Source Output]"
+              endId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task 1\Source - sg_metric_report_csv.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+</DTS:Executable>

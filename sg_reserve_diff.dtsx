@@ -1,0 +1,1596 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/2/2017 11:41:18 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="KidsNextDoor"
+  DTS:CreatorName="KidsNextDoor\bumbleprime"
+  DTS:Description="SSIS Package Description"
+  DTS:DTSID="{C214203B-AA67-4B59-B6D1-B654DDCDAB5B}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.0800.90"
+  DTS:LocaleID="1033"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="sg_reserve_diff"
+  DTS:VersionGUID="{50A9DDE8-C9FF-4DED-93DC-DE8DD28100F3}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{384C47A3-A558-439B-A4FA-55110ACBC8EC}"
+      DTS:ObjectName="DestinationConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=opserver.database.windows.net;User ID=openport@opserver;Initial Catalog=OpDb;Provider=SQLNCLI11;Auto Translate=false;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAk0HpwZbqrEm7iqxZ+QrOfgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB/x3qvSyxgfZnQXhBv0V/B4bNPY8YgjQ4FiHQ6A5k93AAAAAAOgAAAAAIAACAAAABiwnPACUVZJG/fHBjDv3SyqoJXni1YdG+OTd3t2A32GSAAAADHTCHSubGbEnTupb0wiVM6B1VcxmMYYtI1vDNBM3WFpkAAAABUZzC+jystjOl60aHhQAjXaVqo5o+6CLyDfv+B1jH8xucGAEYetKyN+YVAG3LDvMedeDPGtOt45J9ICuQN0fSs</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{63ECA814-BEEB-4FB3-B95F-4A7DF379FEFC}"
+      DTS:ObjectName="SourceConnectionFlatFile">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\Users\bumbleprime\Desktop\MYSQL_Data_Feed\sg_reserve_diff.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Reserve_ID"
+              DTS:DTSID="{84F42B7F-629F-484B-9D98-D97C35FDAA23}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Seq_ID"
+              DTS:DTSID="{E58CAC0A-34C2-4C78-9FA3-40661E2B107D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tenant_Name"
+              DTS:DTSID="{CE22CB76-FE21-4419-BEC8-DE24215EBB35}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Partner_Name"
+              DTS:DTSID="{EA57480D-C75A-4607-A3D8-56D0EBF1F67C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Reservation_Dt"
+              DTS:DTSID="{E901D26D-2B24-4AC9-A2FA-8C636E061340}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Equipment_Type_Cd"
+              DTS:DTSID="{E7F37B59-AA74-457E-85D6-66C580E09776}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Origin_DC_Name"
+              DTS:DTSID="{A43A30B2-AE98-4A06-AC53-7B5517706EB9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Consignee_Name"
+              DTS:DTSID="{DE02EE8C-E712-488F-97D8-3F5BCA4930C2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Destination_City_Name"
+              DTS:DTSID="{52BB291A-E523-4B90-B195-08401CFBECA3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Destination_Province_Name"
+              DTS:DTSID="{8106041E-563B-4A39-B34C-933215969D8D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Unit_Cnt"
+              DTS:DTSID="{3459FA04-A98F-4A95-849F-49C2C8E4B4E2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Destination_Country_Cd"
+              DTS:DTSID="{E903F007-AC61-4F6A-A694-5DDABAF7C3E8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Update_Tstamp"
+              DTS:DTSID="{AE0742E0-B70E-4F35-8961-C8143A2AF69F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Is_Deleted"
+              DTS:DTSID="{8A2423A3-FFA8-4298-8BDE-F0D28C10BE7A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="status_cd"
+              DTS:DTSID="{205C5873-C10B-42C3-BD96-03EDB16D98E6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Created_reservation"
+              DTS:DTSID="{1182F987-70EF-4BD0-961F-86830F65F7FE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="actual_placement_dt"
+              DTS:DTSID="{1F4133C8-0E8E-4DF3-B9E2-50593029845A}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task 1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DTSID="{FDC24301-6A23-42AC-8DA5-D180B193833D}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task 1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task 1\Data Conversion 0 - 0"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion 0 - 0"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Reserve_ID]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Reserve_ID"
+                      lineageId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Reserve_ID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Seq_ID]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Seq_ID"
+                      lineageId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Seq_ID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Tenant_Name]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Tenant_Name"
+                      lineageId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Tenant_Name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Partner_Name]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Partner_Name"
+                      lineageId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Partner_Name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Reservation_Dt]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Reservation_Dt"
+                      lineageId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Reservation_Dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Equipment_Type_Cd]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Equipment_Type_Cd"
+                      lineageId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Equipment_Type_Cd]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Origin_DC_Name]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Origin_DC_Name"
+                      lineageId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Origin_DC_Name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Consignee_Name]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Consignee_Name"
+                      lineageId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Consignee_Name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Destination_City_Name]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Destination_City_Name"
+                      lineageId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Destination_City_Name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Destination_Province_Name]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Destination_Province_Name"
+                      lineageId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Destination_Province_Name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Unit_Cnt]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Unit_Cnt"
+                      lineageId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Unit_Cnt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Destination_Country_Cd]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Destination_Country_Cd"
+                      lineageId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Destination_Country_Cd]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Update_Tstamp]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Update_Tstamp"
+                      lineageId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Update_Tstamp]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Is_Deleted]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Is_Deleted"
+                      lineageId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Is_Deleted]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[status_cd]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="status_cd"
+                      lineageId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[status_cd]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Created_reservation]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Created_reservation"
+                      lineageId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Created_reservation]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[actual_placement_dt]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="actual_placement_dt"
+                      lineageId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[actual_placement_dt]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Reserve_ID]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Reserve_ID]"
+                      name="Reserve_ID"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Reserve_ID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Seq_ID]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Seq_ID]"
+                      name="Seq_ID"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Seq_ID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Tenant_Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Tenant_Name]"
+                      name="Tenant_Name"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Tenant_Name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Partner_Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Partner_Name]"
+                      name="Partner_Name"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Partner_Name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Reservation_Dt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Reservation_Dt]"
+                      name="Reservation_Dt"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Reservation_Dt]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Equipment_Type_Cd]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Equipment_Type_Cd]"
+                      name="Equipment_Type_Cd"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Equipment_Type_Cd]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Origin_DC_Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Origin_DC_Name]"
+                      name="Origin_DC_Name"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Origin_DC_Name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Consignee_Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Consignee_Name]"
+                      name="Consignee_Name"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Consignee_Name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Destination_City_Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Destination_City_Name]"
+                      name="Destination_City_Name"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Destination_City_Name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Destination_Province_Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Destination_Province_Name]"
+                      name="Destination_Province_Name"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Destination_Province_Name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Unit_Cnt]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Unit_Cnt]"
+                      name="Unit_Cnt"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Unit_Cnt]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Destination_Country_Cd]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Destination_Country_Cd]"
+                      name="Destination_Country_Cd"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Destination_Country_Cd]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Update_Tstamp]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Update_Tstamp]"
+                      name="Update_Tstamp"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Update_Tstamp]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Is_Deleted]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Is_Deleted]"
+                      name="Is_Deleted"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Is_Deleted]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[status_cd]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[status_cd]"
+                      name="status_cd"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[status_cd]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Created_reservation]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Created_reservation]"
+                      name="Created_reservation"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Created_reservation]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[actual_placement_dt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[actual_placement_dt]"
+                      name="actual_placement_dt"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[actual_placement_dt]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Destination - sg_reserve$"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Destination - sg_reserve$"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[sg_reserve$]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Destination - sg_reserve$.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].Columns[Reserve_ID]"
+                      cachedDataType="r8"
+                      cachedName="Reserve_ID"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].ExternalColumns[Reserve_ID]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Reserve_ID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].Columns[Seq_ID]"
+                      cachedDataType="r8"
+                      cachedName="Seq_ID"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].ExternalColumns[Seq_ID]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Seq_ID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].Columns[Tenant_Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Tenant_Name"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].ExternalColumns[Tenant_Name]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Tenant_Name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].Columns[Partner_Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Partner_Name"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].ExternalColumns[Partner_Name]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Partner_Name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].Columns[Reservation_Dt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Reservation_Dt"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].ExternalColumns[Reservation_Dt]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Reservation_Dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].Columns[Equipment_Type_Cd]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Equipment_Type_Cd"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].ExternalColumns[Equipment_Type_Cd]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Equipment_Type_Cd]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].Columns[Origin_DC_Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Origin_DC_Name"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].ExternalColumns[Origin_DC_Name]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Origin_DC_Name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].Columns[Consignee_Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Consignee_Name"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].ExternalColumns[Consignee_Name]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Consignee_Name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].Columns[Destination_City_Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Destination_City_Name"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].ExternalColumns[Destination_City_Name]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Destination_City_Name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].Columns[Destination_Province_Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Destination_Province_Name"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].ExternalColumns[Destination_Province_Name]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Destination_Province_Name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].Columns[Unit_Cnt]"
+                      cachedDataType="r8"
+                      cachedName="Unit_Cnt"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].ExternalColumns[Unit_Cnt]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Unit_Cnt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].Columns[Destination_Country_Cd]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Destination_Country_Cd"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].ExternalColumns[Destination_Country_Cd]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Destination_Country_Cd]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].Columns[Update_Tstamp]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Update_Tstamp"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].ExternalColumns[Update_Tstamp]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Update_Tstamp]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].Columns[Is_Deleted]"
+                      cachedDataType="r8"
+                      cachedName="Is_Deleted"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].ExternalColumns[Is_Deleted]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Is_Deleted]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].Columns[status_cd]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="status_cd"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].ExternalColumns[status_cd]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[status_cd]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].Columns[Created_reservation]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Created_reservation"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].ExternalColumns[Created_reservation]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Created_reservation]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].Columns[actual_placement_dt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="actual_placement_dt"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].ExternalColumns[actual_placement_dt]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[actual_placement_dt]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].ExternalColumns[Reserve_ID]"
+                      dataType="r8"
+                      name="Reserve_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].ExternalColumns[Seq_ID]"
+                      dataType="r8"
+                      name="Seq_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].ExternalColumns[Tenant_Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Tenant_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].ExternalColumns[Partner_Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Partner_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].ExternalColumns[Reservation_Dt]"
+                      dataType="dbTimeStamp"
+                      name="Reservation_Dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].ExternalColumns[Equipment_Type_Cd]"
+                      dataType="wstr"
+                      length="255"
+                      name="Equipment_Type_Cd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].ExternalColumns[Origin_DC_Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Origin_DC_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].ExternalColumns[Consignee_Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Consignee_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].ExternalColumns[Destination_City_Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Destination_City_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].ExternalColumns[Destination_Province_Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Destination_Province_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].ExternalColumns[Unit_Cnt]"
+                      dataType="r8"
+                      name="Unit_Cnt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].ExternalColumns[Destination_Country_Cd]"
+                      dataType="wstr"
+                      length="255"
+                      name="Destination_Country_Cd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].ExternalColumns[Update_Tstamp]"
+                      dataType="dbTimeStamp"
+                      name="Update_Tstamp" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].ExternalColumns[Is_Deleted]"
+                      dataType="r8"
+                      name="Is_Deleted" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].ExternalColumns[RECORD_KEY]"
+                      dataType="i4"
+                      name="RECORD_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].ExternalColumns[status_cd]"
+                      dataType="wstr"
+                      length="255"
+                      name="status_cd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].ExternalColumns[Created_reservation]"
+                      dataType="dbTimeStamp"
+                      name="Created_reservation" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input].ExternalColumns[actual_placement_dt]"
+                      dataType="dbTimeStamp"
+                      name="actual_placement_dt" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Destination - sg_reserve$.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - sg_reserve$.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - sg_reserve$.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - sg_reserve$.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - sg_reserve$.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Source - sg_reserve_diff_csv"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Reserve_ID]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].ExternalColumns[Reserve_ID]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Reserve_ID]"
+                      name="Reserve_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Seq_ID]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].ExternalColumns[Seq_ID]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Seq_ID]"
+                      name="Seq_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Tenant_Name]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].ExternalColumns[Tenant_Name]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Tenant_Name]"
+                      name="Tenant_Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Partner_Name]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].ExternalColumns[Partner_Name]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Partner_Name]"
+                      name="Partner_Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Reservation_Dt]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].ExternalColumns[Reservation_Dt]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Reservation_Dt]"
+                      name="Reservation_Dt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Equipment_Type_Cd]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].ExternalColumns[Equipment_Type_Cd]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Equipment_Type_Cd]"
+                      name="Equipment_Type_Cd"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Origin_DC_Name]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].ExternalColumns[Origin_DC_Name]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Origin_DC_Name]"
+                      name="Origin_DC_Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Consignee_Name]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].ExternalColumns[Consignee_Name]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Consignee_Name]"
+                      name="Consignee_Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Destination_City_Name]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].ExternalColumns[Destination_City_Name]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Destination_City_Name]"
+                      name="Destination_City_Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Destination_Province_Name]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].ExternalColumns[Destination_Province_Name]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Destination_Province_Name]"
+                      name="Destination_Province_Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Unit_Cnt]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].ExternalColumns[Unit_Cnt]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Unit_Cnt]"
+                      name="Unit_Cnt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Destination_Country_Cd]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].ExternalColumns[Destination_Country_Cd]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Destination_Country_Cd]"
+                      name="Destination_Country_Cd"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Update_Tstamp]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].ExternalColumns[Update_Tstamp]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Update_Tstamp]"
+                      name="Update_Tstamp"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Is_Deleted]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].ExternalColumns[Is_Deleted]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Is_Deleted]"
+                      name="Is_Deleted"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[status_cd]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].ExternalColumns[status_cd]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[status_cd]"
+                      name="status_cd"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Created_reservation]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].ExternalColumns[Created_reservation]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[Created_reservation]"
+                      name="Created_reservation"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[actual_placement_dt]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].ExternalColumns[actual_placement_dt]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].Columns[actual_placement_dt]"
+                      name="actual_placement_dt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].ExternalColumns[Reserve_ID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Reserve_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].ExternalColumns[Seq_ID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Seq_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].ExternalColumns[Tenant_Name]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Tenant_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].ExternalColumns[Partner_Name]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Partner_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].ExternalColumns[Reservation_Dt]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Reservation_Dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].ExternalColumns[Equipment_Type_Cd]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Equipment_Type_Cd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].ExternalColumns[Origin_DC_Name]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Origin_DC_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].ExternalColumns[Consignee_Name]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Consignee_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].ExternalColumns[Destination_City_Name]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Destination_City_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].ExternalColumns[Destination_Province_Name]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Destination_Province_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].ExternalColumns[Unit_Cnt]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Unit_Cnt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].ExternalColumns[Destination_Country_Cd]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Destination_Country_Cd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].ExternalColumns[Update_Tstamp]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Update_Tstamp" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].ExternalColumns[Is_Deleted]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Is_Deleted" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].ExternalColumns[status_cd]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="status_cd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].ExternalColumns[Created_reservation]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Created_reservation" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output].ExternalColumns[actual_placement_dt]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="actual_placement_dt" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task 1.Paths[Data Conversion Output]"
+              endId="Package\Data Flow Task 1\Destination - sg_reserve$.Inputs[Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Data Flow Task 1.Paths[Flat File Source Output]"
+              endId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task 1\Source - sg_reserve_diff_csv.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+</DTS:Executable>

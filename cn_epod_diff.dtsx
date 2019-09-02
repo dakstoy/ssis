@@ -1,0 +1,1734 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/18/2018 8:00:22 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="KidsNextDoor"
+  DTS:CreatorName="KidsNextDoor\bumbleprime"
+  DTS:Description="SSIS Package Description"
+  DTS:DTSID="{09C3FFF0-EBCB-4AD7-BAB4-FA5351854423}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.0800.90"
+  DTS:LocaleID="1033"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="cn_epod_diff"
+  DTS:VersionGUID="{2196B41F-9750-48F3-A1D7-AB70447114C0}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{28A87550-ABE1-4737-A396-D5AE43A48CE1}"
+      DTS:ObjectName="DestinationConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=opserver.database.windows.net;User ID=openport@opserver;Initial Catalog=OpDb;Provider=SQLNCLI11;Auto Translate=false;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA3NnAxWI950K/K5SaRLPKYwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAbKkrtqqhUnaX9676cj+z1V6n9Dqj93s6cVSwhVTKYiwAAAAAOgAAAAAIAACAAAAAvGQTWrGCpJzLOipt0ZZrp0OFLZmMs4axwFe/9sxj18CAAAADlsiwM4xLXIEyitJBKnR4ekvKBCsDHY/pzcdRG/L4NuEAAAACvs1CrLaWc3CnatVLriIWvNv7wyFOIUKcqDlQLENLqZv+ORKMwqd4VJDjLo7o4tWc49gBWW75N2y8aKj6o5FVd</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{205B847E-2A3D-4536-A832-0069E3E9FCCF}"
+      DTS:ObjectName="SourceConnectionFlatFile">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\Users\bumbleprime\Desktop\MYSQL_Data_Feed\cn_epod_diff.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="shipment_id"
+              DTS:DTSID="{F47B3A8F-87A1-456A-A6FF-2F27E76DC1AD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="shipment_nbr"
+              DTS:DTSID="{4384BFA5-B336-45E1-A50E-F291B4EEFEA8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Shipper_Id"
+              DTS:DTSID="{3686B912-4D45-4491-81DD-208ED3F4FD39}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Parent_Partner_Id"
+              DTS:DTSID="{8C394B96-34F7-472E-B0B7-38E0B9EE1FBA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="order_number"
+              DTS:DTSID="{22AA8206-E358-416C-89B1-534B98372A85}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="delivery_number"
+              DTS:DTSID="{3BC43EA4-A8A5-4D9F-9D90-F43D7DF870F4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="pickup_dt"
+              DTS:DTSID="{F2DD89D6-F9A9-48C7-889E-62A09E0710B8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Actual_Delivery_Dt"
+              DTS:DTSID="{B8EE8B48-7C83-4979-9854-40CF720FA328}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Requested_Delivery_Dt"
+              DTS:DTSID="{7D51F573-D77C-42CE-AD61-D24E8BB1117F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Actual_Pickup_Dt"
+              DTS:DTSID="{0662E439-8367-4B41-9A95-A5E8A62AE72F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="create_dt"
+              DTS:DTSID="{E71D90E2-420B-4224-9AEA-54AEDDBA7779}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="update_dt"
+              DTS:DTSID="{CE09F773-2EC1-414F-B63B-9C64B8DEA9C8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="phone_nbr"
+              DTS:DTSID="{EA17E680-B594-405F-857F-6007A38C101F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="first_name"
+              DTS:DTSID="{1257376A-8E33-4FB1-A1FA-B6147696D09D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="last_name"
+              DTS:DTSID="{FBFB521C-F0D1-48A3-96D7-2ACB32F7B0E4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="shipper_cd"
+              DTS:DTSID="{05145D7E-2F9E-46FA-AB91-C09DF6259E18}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="upload_dt"
+              DTS:DTSID="{D887C64B-F0E4-4F44-85E1-C42A662ECF8A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="operation"
+              DTS:DTSID="{686A35A1-2058-458E-9F89-A2A39B7688A7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="relative_path"
+              DTS:DTSID="{DBBDC5BB-8D56-49E8-988B-1E70DE47DC40}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task 1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DTSID="{FB04F5CC-D7C6-438E-8158-08A5C67D1EDB}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task 1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task 1\Data Conversion 0 - 0"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion 0 - 0"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[shipment_id]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="shipment_id"
+                      lineageId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[shipment_id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[shipment_nbr]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="shipment_nbr"
+                      lineageId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[shipment_nbr]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Shipper_Id]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Shipper_Id"
+                      lineageId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[Shipper_Id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Parent_Partner_Id]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Parent_Partner_Id"
+                      lineageId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[Parent_Partner_Id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[order_number]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="order_number"
+                      lineageId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[order_number]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[delivery_number]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="delivery_number"
+                      lineageId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[delivery_number]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[pickup_dt]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="pickup_dt"
+                      lineageId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[pickup_dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Actual_Delivery_Dt]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Actual_Delivery_Dt"
+                      lineageId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[Actual_Delivery_Dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Requested_Delivery_Dt]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Requested_Delivery_Dt"
+                      lineageId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[Requested_Delivery_Dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Actual_Pickup_Dt]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Actual_Pickup_Dt"
+                      lineageId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[Actual_Pickup_Dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[create_dt]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="create_dt"
+                      lineageId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[create_dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[update_dt]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="update_dt"
+                      lineageId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[update_dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[phone_nbr]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="phone_nbr"
+                      lineageId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[phone_nbr]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[first_name]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="first_name"
+                      lineageId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[first_name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[last_name]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="last_name"
+                      lineageId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[last_name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[shipper_cd]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="shipper_cd"
+                      lineageId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[shipper_cd]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[upload_dt]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="upload_dt"
+                      lineageId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[upload_dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[operation]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="operation"
+                      lineageId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[operation]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[relative_path]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="relative_path"
+                      lineageId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[relative_path]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[shipment_id]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[shipment_id]"
+                      name="shipment_id"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[shipment_id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[shipment_nbr]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[shipment_nbr]"
+                      name="shipment_nbr"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[shipment_nbr]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Shipper_Id]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Shipper_Id]"
+                      name="Shipper_Id"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[Shipper_Id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Parent_Partner_Id]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Parent_Partner_Id]"
+                      name="Parent_Partner_Id"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[Parent_Partner_Id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[order_number]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[order_number]"
+                      name="order_number"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[order_number]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[delivery_number]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[delivery_number]"
+                      name="delivery_number"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[delivery_number]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[pickup_dt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[pickup_dt]"
+                      name="pickup_dt"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[pickup_dt]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Actual_Delivery_Dt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Actual_Delivery_Dt]"
+                      name="Actual_Delivery_Dt"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[Actual_Delivery_Dt]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Requested_Delivery_Dt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Requested_Delivery_Dt]"
+                      name="Requested_Delivery_Dt"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[Requested_Delivery_Dt]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Actual_Pickup_Dt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Actual_Pickup_Dt]"
+                      name="Actual_Pickup_Dt"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[Actual_Pickup_Dt]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[create_dt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[create_dt]"
+                      name="create_dt"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[create_dt]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[update_dt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[update_dt]"
+                      name="update_dt"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[update_dt]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[phone_nbr]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[phone_nbr]"
+                      name="phone_nbr"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[phone_nbr]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[first_name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[first_name]"
+                      name="first_name"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[first_name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[last_name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[last_name]"
+                      name="last_name"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[last_name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[shipper_cd]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[shipper_cd]"
+                      name="shipper_cd"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[shipper_cd]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[upload_dt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[upload_dt]"
+                      name="upload_dt"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[upload_dt]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[operation]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[operation]"
+                      name="operation"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[operation]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[relative_path]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[relative_path]"
+                      name="relative_path"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[relative_path]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Destination - epod"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Destination - epod"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[epod]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Destination - epod.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].Columns[shipment_id]"
+                      cachedDataType="r8"
+                      cachedName="shipment_id"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].ExternalColumns[shipment_id]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[shipment_id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].Columns[shipment_nbr]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="shipment_nbr"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].ExternalColumns[shipment_nbr]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[shipment_nbr]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].Columns[Shipper_Id]"
+                      cachedDataType="r8"
+                      cachedName="Shipper_Id"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].ExternalColumns[Shipper_Id]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Shipper_Id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].Columns[Parent_Partner_Id]"
+                      cachedDataType="r8"
+                      cachedName="Parent_Partner_Id"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].ExternalColumns[Parent_Partner_Id]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Parent_Partner_Id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].Columns[order_number]"
+                      cachedDataType="r8"
+                      cachedName="order_number"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].ExternalColumns[order_number]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[order_number]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].Columns[delivery_number]"
+                      cachedDataType="r8"
+                      cachedName="delivery_number"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].ExternalColumns[delivery_number]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[delivery_number]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].Columns[pickup_dt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="pickup_dt"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].ExternalColumns[pickup_dt]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[pickup_dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].Columns[Actual_Delivery_Dt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Actual_Delivery_Dt"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].ExternalColumns[Actual_Delivery_Dt]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Actual_Delivery_Dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].Columns[Requested_Delivery_Dt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Requested_Delivery_Dt"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].ExternalColumns[Requested_Delivery_Dt]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Requested_Delivery_Dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].Columns[Actual_Pickup_Dt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Actual_Pickup_Dt"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].ExternalColumns[Actual_Pickup_Dt]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Actual_Pickup_Dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].Columns[create_dt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="create_dt"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].ExternalColumns[create_dt]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[create_dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].Columns[update_dt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="update_dt"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].ExternalColumns[update_dt]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[update_dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].Columns[phone_nbr]"
+                      cachedDataType="r8"
+                      cachedName="phone_nbr"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].ExternalColumns[phone_nbr]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[phone_nbr]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].Columns[first_name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="first_name"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].ExternalColumns[first_name]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[first_name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].Columns[last_name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="last_name"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].ExternalColumns[last_name]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[last_name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].Columns[shipper_cd]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="shipper_cd"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].ExternalColumns[shipper_cd]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[shipper_cd]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].Columns[upload_dt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="upload_dt"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].ExternalColumns[upload_dt]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[upload_dt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].Columns[operation]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="operation"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].ExternalColumns[operation]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[operation]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].Columns[relative_path]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="relative_path"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].ExternalColumns[relative_path]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[relative_path]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].ExternalColumns[shipment_id]"
+                      dataType="r8"
+                      name="shipment_id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].ExternalColumns[shipment_nbr]"
+                      dataType="wstr"
+                      length="255"
+                      name="shipment_nbr" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].ExternalColumns[Shipper_Id]"
+                      dataType="r8"
+                      name="Shipper_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].ExternalColumns[Parent_Partner_Id]"
+                      dataType="r8"
+                      name="Parent_Partner_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].ExternalColumns[order_number]"
+                      dataType="r8"
+                      name="order_number" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].ExternalColumns[delivery_number]"
+                      dataType="r8"
+                      name="delivery_number" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].ExternalColumns[pickup_dt]"
+                      dataType="dbTimeStamp"
+                      name="pickup_dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].ExternalColumns[Actual_Delivery_Dt]"
+                      dataType="dbTimeStamp"
+                      name="Actual_Delivery_Dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].ExternalColumns[Requested_Delivery_Dt]"
+                      dataType="dbTimeStamp"
+                      name="Requested_Delivery_Dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].ExternalColumns[Actual_Pickup_Dt]"
+                      dataType="dbTimeStamp"
+                      name="Actual_Pickup_Dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].ExternalColumns[create_dt]"
+                      dataType="dbTimeStamp"
+                      name="create_dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].ExternalColumns[update_dt]"
+                      dataType="dbTimeStamp"
+                      name="update_dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].ExternalColumns[phone_nbr]"
+                      dataType="r8"
+                      name="phone_nbr" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].ExternalColumns[first_name]"
+                      dataType="wstr"
+                      length="255"
+                      name="first_name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].ExternalColumns[last_name]"
+                      dataType="wstr"
+                      length="255"
+                      name="last_name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].ExternalColumns[shipper_cd]"
+                      dataType="wstr"
+                      length="255"
+                      name="shipper_cd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].ExternalColumns[upload_dt]"
+                      dataType="dbTimeStamp"
+                      name="upload_dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].ExternalColumns[operation]"
+                      dataType="wstr"
+                      length="255"
+                      name="operation" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].ExternalColumns[relative_path]"
+                      dataType="wstr"
+                      length="255"
+                      name="relative_path" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input].ExternalColumns[RECORD_KEY]"
+                      dataType="i4"
+                      name="RECORD_KEY" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Destination - epod.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - epod.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - epod.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - epod.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - epod.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Source - cn_epod_csv"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Source - cn_epod_csv"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Source - cn_epod_csv.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[shipment_id]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].ExternalColumns[shipment_id]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[shipment_id]"
+                      name="shipment_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[shipment_nbr]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].ExternalColumns[shipment_nbr]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[shipment_nbr]"
+                      name="shipment_nbr"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[Shipper_Id]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].ExternalColumns[Shipper_Id]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[Shipper_Id]"
+                      name="Shipper_Id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[Parent_Partner_Id]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].ExternalColumns[Parent_Partner_Id]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[Parent_Partner_Id]"
+                      name="Parent_Partner_Id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[order_number]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].ExternalColumns[order_number]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[order_number]"
+                      name="order_number"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[delivery_number]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].ExternalColumns[delivery_number]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[delivery_number]"
+                      name="delivery_number"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[pickup_dt]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].ExternalColumns[pickup_dt]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[pickup_dt]"
+                      name="pickup_dt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[Actual_Delivery_Dt]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].ExternalColumns[Actual_Delivery_Dt]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[Actual_Delivery_Dt]"
+                      name="Actual_Delivery_Dt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[Requested_Delivery_Dt]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].ExternalColumns[Requested_Delivery_Dt]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[Requested_Delivery_Dt]"
+                      name="Requested_Delivery_Dt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[Actual_Pickup_Dt]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].ExternalColumns[Actual_Pickup_Dt]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[Actual_Pickup_Dt]"
+                      name="Actual_Pickup_Dt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[create_dt]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].ExternalColumns[create_dt]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[create_dt]"
+                      name="create_dt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[update_dt]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].ExternalColumns[update_dt]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[update_dt]"
+                      name="update_dt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[phone_nbr]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].ExternalColumns[phone_nbr]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[phone_nbr]"
+                      name="phone_nbr"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[first_name]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].ExternalColumns[first_name]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[first_name]"
+                      name="first_name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[last_name]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].ExternalColumns[last_name]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[last_name]"
+                      name="last_name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[shipper_cd]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].ExternalColumns[shipper_cd]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[shipper_cd]"
+                      name="shipper_cd"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[upload_dt]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].ExternalColumns[upload_dt]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[upload_dt]"
+                      name="upload_dt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[operation]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].ExternalColumns[operation]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[operation]"
+                      name="operation"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[relative_path]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].ExternalColumns[relative_path]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].Columns[relative_path]"
+                      name="relative_path"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].ExternalColumns[shipment_id]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="shipment_id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].ExternalColumns[shipment_nbr]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="shipment_nbr" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].ExternalColumns[Shipper_Id]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Shipper_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].ExternalColumns[Parent_Partner_Id]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Parent_Partner_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].ExternalColumns[order_number]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="order_number" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].ExternalColumns[delivery_number]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="delivery_number" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].ExternalColumns[pickup_dt]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="pickup_dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].ExternalColumns[Actual_Delivery_Dt]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Actual_Delivery_Dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].ExternalColumns[Requested_Delivery_Dt]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Requested_Delivery_Dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].ExternalColumns[Actual_Pickup_Dt]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Actual_Pickup_Dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].ExternalColumns[create_dt]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="create_dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].ExternalColumns[update_dt]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="update_dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].ExternalColumns[phone_nbr]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="phone_nbr" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].ExternalColumns[first_name]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="first_name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].ExternalColumns[last_name]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="last_name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].ExternalColumns[shipper_cd]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="shipper_cd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].ExternalColumns[upload_dt]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="upload_dt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].ExternalColumns[operation]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="operation" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output].ExternalColumns[relative_path]"
+                      codePage="65001"
+                      dataType="str"
+                      length="255"
+                      name="relative_path" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task 1.Paths[Data Conversion Output]"
+              endId="Package\Data Flow Task 1\Destination - epod.Inputs[Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Data Flow Task 1.Paths[Flat File Source Output]"
+              endId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task 1\Source - cn_epod_csv.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+</DTS:Executable>

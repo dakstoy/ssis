@@ -1,0 +1,1149 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/8/2018 8:42:19 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="KidsNextDoor"
+  DTS:CreatorName="KidsNextDoor\bumbleprime"
+  DTS:Description="SSIS Package Description"
+  DTS:DTSID="{444C6B82-382E-4B6F-866D-D14E3D12F31C}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.0800.90"
+  DTS:LocaleID="1033"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="pk_product_diff"
+  DTS:VersionGUID="{77C43729-DA26-4919-95C1-85526ECE335B}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8E6F091D-9AC2-434E-9A67-C1456FD37CF9}"
+      DTS:ObjectName="DestinationConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=opserver.database.windows.net;User ID=openport@opserver;Initial Catalog=OpDb;Provider=SQLNCLI11;Auto Translate=false;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA3NnAxWI950K/K5SaRLPKYwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADieZxJHfyugSbrOaoKIJ2EOWMJE3RWX8iiKaLxEirA5AAAAAAOgAAAAAIAACAAAABfMXxR3p2ywQv8mbfjZCcwBc0MinpdScAv9DFvdygpgSAAAAD4yiVjOPrNybIzFJLYVUg9by9S3jJKDA4jBI/ycjrIZ0AAAAAs/ZmsU+K1e59Tr4NzjdehrGHRifjLOL2pt+cG6mI5xESDTcj7LQbBJeiPYUL0+mzBlGiPOpsnuDvwHUZ/gVlg</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{683FD67E-E374-4FF9-B0C8-7FC294B630C7}"
+      DTS:ObjectName="SourceConnectionFlatFile">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\Users\bumbleprime\Desktop\MYSQL_Data_Feed\pk_product_diff.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="partner_cd"
+              DTS:DTSID="{8DA4964E-BD94-46DB-812A-28F799E47953}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="parent_partner_cd"
+              DTS:DTSID="{EA8F0397-BAB8-4FCC-A8E5-C2ACCEE09CD7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="shipper_cd"
+              DTS:DTSID="{3A3FDA4C-FE5B-465E-A7B7-9D3619BCB843}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="customer_cd"
+              DTS:DTSID="{D100F613-2E69-4A28-B897-911DE0A5C131}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="po_nbr"
+              DTS:DTSID="{1C720E8E-78D4-4965-873C-73AD101893AE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="release_nbr"
+              DTS:DTSID="{5BF4347A-DE94-4FE3-A48C-B76C3ADA0EF7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="product_cd"
+              DTS:DTSID="{ECA7A1D0-CE69-486A-AA32-BD540BBDEE2D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="product_desc_txt"
+              DTS:DTSID="{DEE22C15-9120-482E-8E07-3B3EF47C1547}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UPDATE_TSTAMP"
+              DTS:DTSID="{040D7922-A7FE-46DF-97B1-54C14857DD76}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CREATE_TSTAMP"
+              DTS:DTSID="{42FBFA3C-A22C-410B-98D3-404CE7383FC0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CANCELLED_DT"
+              DTS:DTSID="{DE29E480-7B07-4320-86E5-1EC5ADFDE9F1}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task 1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DTSID="{817335B5-5D63-409F-A6EF-A7A8D31D11B3}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task 1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task 1\Data Conversion 0 - 0"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion 0 - 0"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[partner_cd]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="partner_cd"
+                      lineageId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[partner_cd]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[parent_partner_cd]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="parent_partner_cd"
+                      lineageId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[parent_partner_cd]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[shipper_cd]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="shipper_cd"
+                      lineageId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[shipper_cd]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[customer_cd]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="customer_cd"
+                      lineageId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[customer_cd]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[po_nbr]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="po_nbr"
+                      lineageId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[po_nbr]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[release_nbr]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="release_nbr"
+                      lineageId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[release_nbr]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[product_cd]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="product_cd"
+                      lineageId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[product_cd]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[product_desc_txt]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="product_desc_txt"
+                      lineageId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[product_desc_txt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[UPDATE_TSTAMP]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="UPDATE_TSTAMP"
+                      lineageId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[UPDATE_TSTAMP]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[CREATE_TSTAMP]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CREATE_TSTAMP"
+                      lineageId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[CREATE_TSTAMP]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[CANCELLED_DT]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CANCELLED_DT"
+                      lineageId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[CANCELLED_DT]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[partner_cd]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[partner_cd]"
+                      name="partner_cd"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[partner_cd]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[parent_partner_cd]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[parent_partner_cd]"
+                      name="parent_partner_cd"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[parent_partner_cd]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[shipper_cd]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[shipper_cd]"
+                      name="shipper_cd"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[shipper_cd]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[customer_cd]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[customer_cd]"
+                      name="customer_cd"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[customer_cd]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[po_nbr]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[po_nbr]"
+                      name="po_nbr"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[po_nbr]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[release_nbr]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[release_nbr]"
+                      name="release_nbr"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[release_nbr]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[product_cd]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[product_cd]"
+                      name="product_cd"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[product_cd]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[product_desc_txt]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="500"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[product_desc_txt]"
+                      name="product_desc_txt"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[product_desc_txt]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[UPDATE_TSTAMP]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[UPDATE_TSTAMP]"
+                      name="UPDATE_TSTAMP"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[UPDATE_TSTAMP]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[CREATE_TSTAMP]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[CREATE_TSTAMP]"
+                      name="CREATE_TSTAMP"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[CREATE_TSTAMP]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[CANCELLED_DT]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[CANCELLED_DT]"
+                      name="CANCELLED_DT"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[CANCELLED_DT]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Destination - product"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Destination - product"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[product]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Destination - product.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Destination - product.Inputs[Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - product.Inputs[Destination Input].Columns[partner_cd]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="partner_cd"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - product.Inputs[Destination Input].ExternalColumns[partner_cd]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[partner_cd]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - product.Inputs[Destination Input].Columns[parent_partner_cd]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="parent_partner_cd"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - product.Inputs[Destination Input].ExternalColumns[parent_partner_cd]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[parent_partner_cd]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - product.Inputs[Destination Input].Columns[shipper_cd]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="shipper_cd"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - product.Inputs[Destination Input].ExternalColumns[shipper_cd]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[shipper_cd]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - product.Inputs[Destination Input].Columns[customer_cd]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="customer_cd"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - product.Inputs[Destination Input].ExternalColumns[customer_cd]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[customer_cd]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - product.Inputs[Destination Input].Columns[po_nbr]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="po_nbr"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - product.Inputs[Destination Input].ExternalColumns[po_nbr]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[po_nbr]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - product.Inputs[Destination Input].Columns[release_nbr]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="release_nbr"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - product.Inputs[Destination Input].ExternalColumns[release_nbr]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[release_nbr]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - product.Inputs[Destination Input].Columns[product_cd]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="product_cd"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - product.Inputs[Destination Input].ExternalColumns[product_cd]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[product_cd]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - product.Inputs[Destination Input].Columns[product_desc_txt]"
+                      cachedDataType="wstr"
+                      cachedLength="500"
+                      cachedName="product_desc_txt"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - product.Inputs[Destination Input].ExternalColumns[product_desc_txt]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[product_desc_txt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - product.Inputs[Destination Input].Columns[UPDATE_TSTAMP]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UPDATE_TSTAMP"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - product.Inputs[Destination Input].ExternalColumns[UPDATE_TSTAMP]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[UPDATE_TSTAMP]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - product.Inputs[Destination Input].Columns[CREATE_TSTAMP]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CREATE_TSTAMP"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - product.Inputs[Destination Input].ExternalColumns[CREATE_TSTAMP]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[CREATE_TSTAMP]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - product.Inputs[Destination Input].Columns[CANCELLED_DT]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CANCELLED_DT"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - product.Inputs[Destination Input].ExternalColumns[CANCELLED_DT]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[CANCELLED_DT]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - product.Inputs[Destination Input].ExternalColumns[partner_cd]"
+                      dataType="wstr"
+                      length="255"
+                      name="partner_cd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - product.Inputs[Destination Input].ExternalColumns[parent_partner_cd]"
+                      dataType="wstr"
+                      length="255"
+                      name="parent_partner_cd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - product.Inputs[Destination Input].ExternalColumns[shipper_cd]"
+                      dataType="wstr"
+                      length="255"
+                      name="shipper_cd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - product.Inputs[Destination Input].ExternalColumns[customer_cd]"
+                      dataType="wstr"
+                      length="255"
+                      name="customer_cd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - product.Inputs[Destination Input].ExternalColumns[po_nbr]"
+                      dataType="wstr"
+                      length="255"
+                      name="po_nbr" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - product.Inputs[Destination Input].ExternalColumns[release_nbr]"
+                      dataType="wstr"
+                      length="255"
+                      name="release_nbr" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - product.Inputs[Destination Input].ExternalColumns[product_cd]"
+                      dataType="wstr"
+                      length="255"
+                      name="product_cd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - product.Inputs[Destination Input].ExternalColumns[product_desc_txt]"
+                      dataType="wstr"
+                      length="500"
+                      name="product_desc_txt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - product.Inputs[Destination Input].ExternalColumns[UPDATE_TSTAMP]"
+                      dataType="dbTimeStamp"
+                      name="UPDATE_TSTAMP" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - product.Inputs[Destination Input].ExternalColumns[CREATE_TSTAMP]"
+                      dataType="dbTimeStamp"
+                      name="CREATE_TSTAMP" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - product.Inputs[Destination Input].ExternalColumns[CANCELLED_DT]"
+                      dataType="dbTimeStamp"
+                      name="CANCELLED_DT" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - product.Inputs[Destination Input].ExternalColumns[RECORD_KEY]"
+                      dataType="i4"
+                      name="RECORD_KEY" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Destination - product.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\Destination - product.Inputs[Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - product.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - product.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - product.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - product.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Source - pk_product_diff_csv"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Source - pk_product_diff_csv"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[partner_cd]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].ExternalColumns[partner_cd]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[partner_cd]"
+                      name="partner_cd"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[parent_partner_cd]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].ExternalColumns[parent_partner_cd]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[parent_partner_cd]"
+                      name="parent_partner_cd"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[shipper_cd]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].ExternalColumns[shipper_cd]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[shipper_cd]"
+                      name="shipper_cd"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[customer_cd]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].ExternalColumns[customer_cd]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[customer_cd]"
+                      name="customer_cd"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[po_nbr]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].ExternalColumns[po_nbr]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[po_nbr]"
+                      name="po_nbr"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[release_nbr]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].ExternalColumns[release_nbr]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[release_nbr]"
+                      name="release_nbr"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[product_cd]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].ExternalColumns[product_cd]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[product_cd]"
+                      name="product_cd"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[product_desc_txt]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].ExternalColumns[product_desc_txt]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[product_desc_txt]"
+                      name="product_desc_txt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[UPDATE_TSTAMP]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].ExternalColumns[UPDATE_TSTAMP]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[UPDATE_TSTAMP]"
+                      name="UPDATE_TSTAMP"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[CREATE_TSTAMP]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].ExternalColumns[CREATE_TSTAMP]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[CREATE_TSTAMP]"
+                      name="CREATE_TSTAMP"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[CANCELLED_DT]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].ExternalColumns[CANCELLED_DT]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].Columns[CANCELLED_DT]"
+                      name="CANCELLED_DT"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].ExternalColumns[partner_cd]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="partner_cd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].ExternalColumns[parent_partner_cd]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="parent_partner_cd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].ExternalColumns[shipper_cd]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="shipper_cd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].ExternalColumns[customer_cd]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="customer_cd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].ExternalColumns[po_nbr]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="po_nbr" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].ExternalColumns[release_nbr]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="release_nbr" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].ExternalColumns[product_cd]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="product_cd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].ExternalColumns[product_desc_txt]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="product_desc_txt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].ExternalColumns[UPDATE_TSTAMP]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="UPDATE_TSTAMP" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].ExternalColumns[CREATE_TSTAMP]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="CREATE_TSTAMP" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output].ExternalColumns[CANCELLED_DT]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="CANCELLED_DT" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task 1.Paths[Data Conversion Output]"
+              endId="Package\Data Flow Task 1\Destination - product.Inputs[Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Data Flow Task 1.Paths[Flat File Source Output]"
+              endId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task 1\Source - pk_product_diff_csv.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+</DTS:Executable>
